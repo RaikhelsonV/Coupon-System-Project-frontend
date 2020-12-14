@@ -1,0 +1,32 @@
+<form action="" class="menu-box block">
+    <h2 class="titular">Update {{coupon.title}}</h2>
+    
+
+
+
+    <label>Title</label>
+    <input class="form" type="text" placeholder="title" [formControl]="titleFormControl" name="title">
+
+
+    <label>Category</label>
+    <input class="form" type="text"  placeholder="category"  [formControl]="categoryFormControl" name="category">
+
+
+    <label>Start Date</label>
+    <input class="form" type="text" placeholder="startDate"  [formControl]="startDateFormControl" name="startDate">
+
+    <label>End Date</label>
+    <input class="form" type="text" placeholder="endDate"  [formControl]="endDateFormControl" name="endDate">
+
+    <label>Amount</label>
+    <input class="form" type="text" placeholder="amount"  [formControl]="amountFormControl" name="amount">
+
+    <label>Description</label>
+    <input class="form" type="text" placeholder="description" [formControl]="descriptionFormControl" name="description">
+
+    <label>Price</label>
+    <input class="form" type="text"  placeholder="price"  [formControl]="priceFormControl" name="price">
+
+   
+    <button class="form " (click)="UpdateCoupon() ">Update</button>
+</form>

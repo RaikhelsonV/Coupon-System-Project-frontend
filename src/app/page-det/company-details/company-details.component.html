@@ -1,0 +1,36 @@
+<div class="one"> 
+    <h2> {{ company.name }}</h2>
+    <img class="compImg" src="{{company.imageURL}}" >
+    <!-- <img src="/assets/mini/{{company.id}}.jpg" >  -->
+</div>
+
+         
+
+<!-- <a class="buy" routerLink="/comp-coup">Watch сompany "{{ company.name }}" coupons</a> -->
+
+<div class="cont" *ngIf="coupons">
+       
+    <div class="card" *ngFor="let c of coupons">
+            <div class="imgBox">
+                <img  class="img"   src="{{c.imageURL}}" width=95px; height=110px;>
+            </div>
+            <div class="det">
+                <a class="title"  style="cursor: pointer; text-transform: uppercase;"    routerLink="/coupon-details/{{c.id}}">{{c.title}}</a>
+                <br>
+                
+                <a class="desc"   style="cursor: pointer; text-transform: uppercase;" routerLink="/coupon-details/{{c.id}}">{{c.description}}</a> 
+                <br>
+                <a class="category" style="cursor: pointer;" routerLink="/coupon-cat/{{c.category}}">category: {{c.category}}</a>
+
+            </div>
+     
+    
+           
+    </div>
+
+</div>
+
+
+<br><br>
+
+<a class="button"  routerLink="/company">Back to All Companies</a>

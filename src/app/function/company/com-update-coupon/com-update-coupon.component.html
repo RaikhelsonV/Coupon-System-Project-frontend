@@ -1,0 +1,32 @@
+<form action="" class="menu-box ">
+    <!-- <h2 class="titular">Update {{coupon.title}}</h2>
+    <label>id</label> -->
+    <input class="form" type="number" placeholder="id"  [formControl]="idFormControl" name="id">
+
+
+    <input class="form" type="text" placeholder="title" [formControl]="titleFormControl" name="title">
+
+
+    <input class="form" type="text" placeholder="startDate" [formControl]="startDateFormControl" name="startDate">
+
+  
+    <input class="form" type="text" placeholder="endDate"  [formControl]="endDateFormControl" name="endDate">
+
+
+    <input class="form" type="number"  placeholder="category"  [formControl]="categoryFormControl" name="category">
+
+
+    <input class="form" type="number" placeholder="amount" [formControl]="amountFormControl" name="amount">
+
+    <input class="form" type="text" placeholder="description"  [formControl]="descriptionFormControl" name="description">
+
+  
+    <input  type="number"  placeholder="price"  [formControl]="priceFormControl" name="price">
+
+   
+    <input  type="text" placeholder="imageURL" [formControl]="imageURLFormControl" name="imageURL">
+
+    <button class="up " (click)="UpdateCoupon() ">Update</button>
+   
+</form>
+<a class="button"  routerLink="/comp-coup">Back to All Company Coupons</a>

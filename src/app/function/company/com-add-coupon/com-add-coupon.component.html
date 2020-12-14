@@ -1,0 +1,54 @@
+
+    <form #formInfo="ngForm" class="menu-box">
+        <input #titleInfo="ngModel" required pattern="^[A-Z].*$"
+        type="text" placeholder="Title..." [(ngModel)]="coupon.title" name="title">
+        <span *ngIf="titleInfo.errors?.required && titleInfo.touched">Missing name</span>
+        <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Name must start with a capital letter!</span>
+        <br><br>
+         
+        <input #srartDateInfo="ngModel" style="font-family: 'Times New Roman', Times, serif; font-size: 18px;"
+        type="text" placeholder="Start Date.." [(ngModel)]="coupon.startDate" name="startDate">
+        <br><br>
+    
+        <input #endDateInfo="ngModel" style="font-family: 'Times New Roman', Times, serif; font-size: 18px;"
+        type="text" placeholder="End Date..." [(ngModel)]="coupon.endDate" name="endDate">
+        <br><br>
+    
+        <input #categoryInfo="ngModel" required min="0" max="100"
+        type="number" placeholder="Category..." [(ngModel)]="coupon.category" name="category">
+        <span *ngIf="categoryInfo.invalid && categoryInfo.touched" ></span>
+        <br><br>
+
+        <input #amountInfo="ngModel" required min="0" max="100000"
+        type="number" placeholder="Amount..." [(ngModel)]="coupon.amount" name="amount">
+        <span *ngIf="amountInfo.invalid && amountInfo.touched" ></span>
+        <br><br>
+
+        <input #descriptionInfo="ngModel" required pattern="^[A-Z].*$"
+         type="text" placeholder="Description..." [(ngModel)]="coupon.description" name="description">
+         <span *ngIf="descriptionInfo.errors?.required && descriptionInfo.touched">Missing name</span>
+        <span *ngIf="descriptionInfo.errors?.pattern && descriptionInfo.touched">Name must start with a capital letter!</span>
+        <br><br>
+    
+        
+        <input #priceInfo="ngModel" required min="0" max="100000"
+        type="number" placeholder="Price..." [(ngModel)]="coupon.price" name="price">
+        <span *ngIf="priceInfo.invalid && priceInfo.touched" ></span>
+        <br><br> 
+
+        <input #imageURLInfo="ngModel" 
+        type="text" placeholder="URL..." [(ngModel)]="coupon.imageURL" name="imageURL">
+        <br><br>
+        
+    
+    
+   
+    
+        <button class="up" [disabled]="!formInfo.form.valid"  (click)="addCoupon()">Add Coupon</button>
+    </form>
+
+
+<a class="button"  routerLink="/comp-coup">Back to All Company Coupons</a>
+
+
+

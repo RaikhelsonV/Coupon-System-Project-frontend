@@ -1,0 +1,22 @@
+#footer-site{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: rgb(98, 115, 121);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+}
+#footer-site,
+#footer-site a{
+    color: rgb(222, 241, 245);
+}
+#footer-site a{
+    text-decoration: none;
+}
+.widget-social li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+.widget-social li a:hover{
+    color: rgb(46, 109, 121) !important;
+} 

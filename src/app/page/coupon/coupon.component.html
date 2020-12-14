@@ -1,0 +1,54 @@
+
+<img *ngIf="!coupons" src="/assets/load/3.gif" height="274px" width="338px" style="margin-top: 10%;">
+
+    <div *ngIf="coupons" class="dws-wrapper">
+          <div class="flex-cont">
+            <div *ngFor="let p of coupons"  class="imageBox">
+                <a class="img"  style="cursor: pointer;" routerLink="/coupon-details/{{p.id}}">
+                <img  class="img"   src="{{p.imageURL}}" width=80px;
+                height=100px;>
+            </a>
+                <!-- <app-thumbnail class="img" imageSource="/assets/coupon/{{p.id}}.jpg" 
+                        (imageClicked)="showImage($event)"></app-thumbnail>                         -->
+                 <a class="title"  style="cursor: pointer;" routerLink="/coupon-details/{{p.id}}">
+                            {{p.title}}
+                </a>       
+                <a class="desc"   style="cursor: pointer;"routerLink="/coupon-details/{{p.id}}">
+                    {{p.description}}
+                </a> 
+                <table >
+                    <tbody class="body">
+                        <tr>
+                            <td>category:</td>
+                            <a style="cursor: pointer;" class="cat" routerLink="/coupon-cat/{{p.category}}">
+                            <td>{{p.category}}</td></a> 
+                        </tr>
+                        <tr>
+                            <td>price:</td>
+                            <td >{{p.price}}</td>
+                            <td style="text-align: left;">₪</td>
+                        </tr>
+                        <tr>
+                            <td>amount:</td>
+                            <td >{{p.amount}}</td>
+                            <td style="text-align: left;width: 2px; ">pc.</td>
+                        </tr>
+                   
+                        <tr>
+                            <td >start_date:</td>
+                            <td >{{p.startDate}}</td>
+                        </tr>
+                        <tr>
+                            <td>end_date:</td>
+                            <td>{{p.endDate}}</td>
+                        </tr>
+                      
+                 
+                       
+                </tbody>
+           </table>
+        
+        </div>
+    </div>   
+ 
+</div>

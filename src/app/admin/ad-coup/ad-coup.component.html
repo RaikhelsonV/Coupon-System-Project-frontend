@@ -1,0 +1,34 @@
+<img *ngIf="!coupons" src="/assets/load/2.gif" style="margin-top: 2%;">
+
+
+<div *ngIf="coupons" class="cus">
+    <h1>All Coupons</h1>
+    <table >
+       
+            <tr class="str" *ngFor="let p of coupons">
+                <td>{{p.id}}</td>
+                
+                <td>  <img  class="img"   src="{{p.imageURL}}" width=80px;
+                    height=100px;></td>
+                <td> <a class="title"style="cursor: pointer;" routerLink="/coupon-details/{{p.id}}">{{p.title}}</a></td>
+                <td> <a class="desc" style="cursor: pointer;" routerLink="/coupon-details/{{p.id}}">{{p.description}}</a> </td>
+                <td>{{p.price}} ₪</td>
+                <td>{{p.amount}} pc.</td>
+                <td>category: <a class="category" style="cursor: pointer;" routerLink="/coupon-cat/{{p.category}}">{{p.category}}</a></td>
+                <td>{{p.startDate}}</td>
+                <td>{{p.endDate}}</td>
+                <td><button title="Delete Coupon" class="del" (click)=deleteCoupon(p.id)><i  class="fa fa-times" 
+                   style="font-size:40px;
+                    color:rgb(72, 103, 114);"></i></button></td>
+                <td><a title="Update Coupon. Pay attention to your coupon identification number" routerLink="/update-coupon">
+                    <i class="fa fa-pencil"    style="font-size:40px;
+                    color:rgb(72, 103, 114);"></i></a></td>
+                                 
+                
+            </tr>
+            <tr>
+              
+            </tr>
+    </table>
+    <a class="con" routerLink="/ad-account">settings</a>
+ </div>     

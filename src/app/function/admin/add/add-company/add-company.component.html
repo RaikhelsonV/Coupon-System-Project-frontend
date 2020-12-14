@@ -1,0 +1,16 @@
+<div>
+    <form #formInfo="ngForm" class="menu-box">
+        <input #nameInfo="ngModel" required pattern="^[A-Z].*$"
+        type="text" placeholder="Name..." [(ngModel)]="company.name" name="name">
+        <span *ngIf="nameInfo.errors?.required && nameInfo.touched">Missing name</span>
+        <span *ngIf="nameInfo.errors?.pattern && nameInfo.touched">Name must start with a capital letter!</span>
+        <br><br>
+        <input #imageURLInfo="ngModel" 
+        type="text" placeholder="URL..." [(ngModel)]="company.imageURL" name="imageURL">
+        <br><br>
+        <button class="up" [disabled]="!formInfo.form.valid" (click)="addCompany()">Add Company</button>
+    
+    </form>
+    
+</div>
+<a class="button"  routerLink="/ad-account">Back to All Settings</a>

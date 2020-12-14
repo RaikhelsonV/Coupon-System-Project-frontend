@@ -1,0 +1,22 @@
+<div>
+    <img src="{{coupon.imageURL}}" >
+    <!-- <img src="/assets/coupon/{{coupon.id}}.jpg"> -->
+    <h2> {{ coupon.title }}</h2>
+    <h2>{{ coupon.description }}</h2>
+    <h3>Price: {{ coupon.price }} ₪</h3>
+    <h3>Amount: {{ coupon.amount }} pc.</h3>
+    <h3>Category: {{ coupon.category }}</h3>
+    <h3>Start date: {{ coupon.startDate }}</h3>
+    <h3>End date: {{ coupon.endDate }}</h3>
+</div>
+    <br><br>
+
+    <button class="buy"(click)="purchaseCoupon()">buy Coupon</button>
+    <button class="rel" (click)="releaseCoupon()">implemented</button>
+
+    
+  
+
+<a class="button" routerLink="/coupon">Back to All Coupons</a>
+
+

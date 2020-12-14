@@ -1,0 +1,93 @@
+form{
+  background: url(https://upload.wikimedia.org/wikipedia/commons/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg);
+  background-size: cover;
+  margin: 40px auto;
+  opacity: 0.7;
+  height: 70%;
+  overflow: auto;
+  
+}
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-thumb{
+  
+  background: linear-gradient(#627379,#7E878A, #ADD8E6,#7E878A,#627379);
+ 
+  border-radius: 5px;
+  
+}
+.menu-box{
+  border-radius: 5px;
+  padding: 20px;
+  width: 420px;
+  font-size: 14px;
+  color: #454547;
+  text-decoration: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+
+.menu-box h2{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(15, 73, 39);
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.menu-box input{
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  background: #D0CBAA;
+  color: #454547;
+  opacity: 0.7;
+
+}
+.button {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-color: rgb(222, 241, 245);
+    border: none;
+    color: rgb(21, 64, 73) ;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 10px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    
+  }
+  .button:hover {opacity: 1}
+  .up{
+   
+      border: 0;
+      background: #709ca5;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid lightblue;
+      padding: 14px 40px;
+      text-transform: uppercase;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-size: 18px;
+      /*цвет текста внутри*/
+      outline: none;
+      color: white;
+      border-radius: 2px;
+      transition: 0.25s;
+  }
+  .up:hover{
+      background: rgb(0, 255, 170);
+  }
+  

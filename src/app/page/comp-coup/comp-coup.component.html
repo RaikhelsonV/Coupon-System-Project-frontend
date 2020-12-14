@@ -1,0 +1,48 @@
+<div>
+    <h2>Welcome to your account №{{ company.id }} !</h2>
+    <h2 style="color: coral;"> {{ company.name }}</h2>
+    
+    
+    
+    <a class="up"  style="cursor: pointer;" routerLink="/com-update-company">Update company</a>
+</div>
+
+  
+<div  class="cus">
+   
+    <table *ngIf="coupons">
+       
+            <tr class="str" *ngFor="let p of coupons">
+                <td>{{p.id}}</td>
+                
+                <td>  <img  class="img"   src="{{p.imageURL}}" width=80px;
+                    height=100px;></td>
+                <td> <a class="title"  style="cursor: pointer; text-transform: uppercase;"    routerLink="/coupon-details/{{p.id}}">{{p.title}}</a></td>
+                <td> <a class="desc"   style="cursor: pointer; text-transform: uppercase;" routerLink="/coupon-details/{{p.id}}">{{p.description}}</a> </td>
+                <td>price(₪): {{p.price}}</td>
+                <td>amount(pc.): {{p.amount}}</td>
+                <td> <a class="category" style="cursor: pointer;" routerLink="/coupon-cat/{{p.category}}">category: {{p.category}}</a></td>
+                <td>{{p.startDate}}</td>
+                <td>{{p.endDate}}</td>
+   
+                <td><a  title="Update Coupon.Pay attention to your coupon identification number"  style="cursor: pointer;" routerLink="/com-update-coupon">
+                <i class="fa fa-pencil" style="font-size:40px;
+               color:rgb(72, 103, 114);
+              "></i></a></td>
+               
+               
+               <td><button title="Delete Coupon"  (click)=delCoupon(p.id)><i  class="fa fa-times" 
+                    style="font-size:40px;
+                   color:rgb(72, 103, 114);"></i></button></td>
+              
+                   
+            </tr>
+            <tr>
+              
+            </tr>
+    </table>
+    <a class="buy" routerLink="/com-add-coupon">Add new coupon</a> 
+ </div>        
+
+ 
+

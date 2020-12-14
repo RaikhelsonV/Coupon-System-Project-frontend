@@ -1,0 +1,169 @@
+.one{
+    margin-top: 30px;
+    height: 40%;
+    overflow: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    position: relative;
+    
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    
+    background: linear-gradient(#627379,#7E878A, #ADD8E6,#7E878A,#627379);
+   
+    border-radius: 5px;
+    
+}
+.compImg{
+    height: 150px;
+}
+h2{
+    font-weight: 500;
+    color: rgb(107, 204, 221);
+    text-transform: uppercase;
+}
+
+h3{
+    color: rgb(222, 241, 245);
+    font-size: 12px;
+}
+.button {
+    position: absolute;
+    top: 18%;
+    left: 10%;
+    background-color: rgb(222, 241, 245);
+    border: none;
+    color: rgb(21, 64, 73) ;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 10px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
+    text-decoration: none;
+    
+  }
+  .button:hover {opacity: 1}
+  .buy{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    padding: 5px 5px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px ;
+    /* text */
+    color: rgb(21, 64, 73) ;
+    background-color: rgb(222, 241, 245);
+    border: none;
+    display: block;
+    transition: .5s;
+    overflow: hidden;
+ 
+}
+.buy::before,
+.buy::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(64,81,86,0.3);
+    top: 0;
+    left: -100%;
+    opacity: .5;
+    transition: .3s;
+  
+}
+.buy::after{
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.buy:hover::before,
+.buy:hover::after {
+    left: 0;
+} 
+
+.buy:hover {
+    color: rgb(14, 122, 108);
+} 
+.cont{
+    height: 40%;
+    overflow: auto;
+    /* max-width: 800px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px;
+    margin: 10px;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    
+    background: linear-gradient(#627379,#7E878A, #ADD8E6,#7E878A,#627379);
+   
+    border-radius: 5px;
+    
+}
+.card{
+    position: relative;
+    margin: 20px 20px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(181, 205, 214);
+    transform-style: preserve-3d;
+    transform: perspective(1600px);
+    transition: 1s;
+    box-shadow: inset 200px 0 50px rgba(0, 0, 0, .5);
+
+}
+.card:hover{
+    z-index: 1000;
+    transform: perspective(1600px) rotate(-10deg);
+    box-shadow: inset 40px 0 50px rgba(0, 0, 0, .5);
+}
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightblue;
+    box-sizing: border-box;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+
+}
+.card .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+
+}
+.card:hover .imgBox{
+    transform: rotateY(-135deg);
+}
+.card .det {
+    position: absolute;
+    top:10px;
+    left: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+
+  
+}
+a{
+    text-decoration: none;
+    color: rgb(63, 67, 68);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+ 
+}

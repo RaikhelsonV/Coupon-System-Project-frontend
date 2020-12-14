@@ -1,0 +1,25 @@
+<img *ngIf="!companies" src="/assets/load/1.gif" height="449px" width="350px" style="margin-top: 2%;" >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<div *ngIf="companies" class="dws-wrapper" >
+    <p  class="now">List of "Book Publishing Companies".</p>
+    <div class="flex-cont">
+        <div *ngFor="let p of companies"  class="imageBox" >
+            <img style="cursor: pointer;" routerLink="/company-details/{{p.id}}" class="img"   src="{{p.imageURL}}">
+         
+            <!-- <app-thumbnail imageSource="/assets/mini/{{p.id}}.jpg" 
+                 (imageClicked)="showImage($event)"></app-thumbnail>                         -->
+            
+            <a  style="cursor: pointer;" routerLink="/company-details/{{p.id}}">
+                        {{p.name}}
+            </a>
+    
+           
+            
+        </div>
+    </div>
+
+</div>     
+
+   
+ 

@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1, 
+        "imageURL": "url",
+        "title": "Life Support: 100 Poems to Reach for on Dark Nights ",
+        "description": "Ulia Copus",
+        "price": 1000,
+        "amount": 20,
+        "category": 2,
+        "start_date": "04.04.2019",
+        "end_date": "04.04.2019"   
+    },
+    {
+        "id": 2, 
+        "imageURL": "url",
+        "title": "Picnic Comma Lightning: The Experience of Reality in the Twenty-First Century",
+        "description": "Laurence Scott",
+        "price": 1000,
+        "amount": 20,
+        "category": 2,
+        "start_date": "28.05.2019",
+        "end_date": "20.01.2020"
+    },
+    {
+        "id": 3, 
+        "imageURL": "url",
+        "title": "Magic for Liars",
+        "description": " Sarah Gailey",
+        "price": 1000,
+        "amount": 20,
+        "category": 2,
+        "start_date": "04.06.2019",
+        "end_date": "20.02.2020"     
+    
+    }
+  ]

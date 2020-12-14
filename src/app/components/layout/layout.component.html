@@ -1,0 +1,21 @@
+<section>
+    <header>
+        <app-header></app-header>
+       
+        <app-menu ></app-menu>
+                        
+    </header>
+    <aside>
+        <app-search-coupon *ngIf="modeService.clientType == '1'"></app-search-coupon>
+    </aside>
+    <main>
+       <router-outlet></router-outlet>
+
+    </main>
+    <aside>
+     
+    </aside>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</section>

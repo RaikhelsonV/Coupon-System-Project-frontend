@@ -1,0 +1,29 @@
+<img *ngIf="!companies" src="/assets/load/2.gif" style="margin-top: 2%;" >
+
+<div *ngIf="companies" class="cus">
+    <h1>All Companies</h1>
+    <table >
+       
+            <tr class="str" *ngFor="let p of companies">
+                <td>{{p.id}}</td>
+                
+                <td>  <img  class="img"   src="{{p.imageURL}}" width=80px;
+                    height=100px;></td>
+                <td> <a class="name" style="cursor: pointer;" routerLink="/company-details/{{p.id}}">{{p.name}}</a></td>
+           
+                <td><button title="Delete Company" class="del" (click)=deleteCompany(p.id)><i  class="fa fa-times"
+                style="font-size:40px;
+                color:rgb(72, 103, 114);">
+                </i></button></td>
+
+            <td><a title="Update Company" routerLink="/update-company">
+                <i class="fa fa-pencil"
+                style="font-size:40px;
+                color:rgb(72, 103, 114);"></i></a></td>
+             </tr>
+        
+    </table>
+  
+    <a class="con" routerLink="/ad-account">settings</a>
+</div>     
+

@@ -1,0 +1,27 @@
+<div class="root">
+    <form >
+        <input class="title" type="text" placeholder="Find Coupons By Title" [(ngModel)] = "title" name="title" required pattern="^[A-Za-z].*$">
+        <button class="tt" (click)="getCouponsByTitle()">
+            <i  class="fa fa-search" style="font-size:20px;color:lightblue;"></i>
+            </button>
+  
+    </form>
+    <form >
+        <input type="text" placeholder="Find Coupons By Description" [(ngModel)] = "description" name="description" required pattern="^[A-Za-z].*$" >
+        <button class="dd" (click)="getCouponsByDesc()">
+            <i  class="fa fa-search" style="font-size:20px;color:lightblue;"></i>
+            </button>
+    </form>
+    <form >
+        <input type="number" placeholder="Find Coupons By Price Less Than" [(ngModel)] = "price" name="price">
+        <button class="pp" (click)="getCouponsByPricelessThan()">
+            <i  class="fa fa-search" style="font-size:20px;color:lightblue;"></i>
+            </button>
+    </form>
+    <!-- <form >
+        <input type="number" placeholder="Find By Price Greater Than" [(ngModel)] = "price" name="price">
+        <button (click)="getCouponsByPriceGreaterThan()">Find</button>
+    </form> -->
+    
+</div>
+

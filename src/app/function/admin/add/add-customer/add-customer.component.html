@@ -1,0 +1,18 @@
+<div>
+    <form #formInfo="ngForm" class="menu-box">
+        <input #firstNameInfo="ngModel" required pattern="^[A-Z].*$"
+        type="text" placeholder="First Name..." [(ngModel)]="customer.firstName" name="firstName">
+        <span *ngIf="firstNameInfo.errors?.required && firstNameInfo.touched">Missing name</span>
+        <span *ngIf="firstNameInfo.errors?.pattern && firstNameInfo.touched">Name must start with a capital letter!</span>
+        <br><br>
+    
+        <input #lastNameInfo="ngModel" required pattern="^[A-Z].*$"
+        type="text" placeholder="Last Name..." [(ngModel)]="customer.lastName" name="lastName">
+        <span *ngIf="lastNameInfo.errors?.required && lastNameInfo.touched">Missing name</span>
+        <span *ngIf="lastNameInfo.errors?.pattern && lastNameInfo.touched">Name must start with a capital letter!</span>
+        <br><br>
+    
+        <button class="up" [disabled]="!formInfo.form.valid"  (click)="addCustomer()">Add Customer</button>
+    </form>
+</div>
+<a class="button"  routerLink="/ad-account">Back to All Settings</a>

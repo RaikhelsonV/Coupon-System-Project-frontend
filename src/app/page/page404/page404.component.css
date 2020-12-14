@@ -1,0 +1,35 @@
+.erro{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(21, 64, 73) ;
+}
+h2 {
+    margin: 10px 0;
+}
+h1 {
+    margin: 0;
+    font-size: 170px;
+    letter-spacing: 15px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg);
+    background-size: contain;
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+  
+}
+p {
+    font-size: 20px;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(222, 241, 245);
+    color: rgb(21, 64, 73) ;
+    padding: 5px 5px;
+    font-size: 14px;
+    transition: .3s ease;
+    
+}
+a:hover{
+    background-color: tomato;
+    text-shadow: -5px 5px 20px -5px #010101;
+}

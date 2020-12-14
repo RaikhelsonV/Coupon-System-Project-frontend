@@ -1,0 +1,141 @@
+header{
+    margin-top: 0;
+    width: 100%;
+}
+
+.login{
+float: right ;
+position: relative;
+}
+.fa-sign-in {
+position: absolute;
+top: 12px;
+right: 50px;
+font-size: 38px;
+}
+.fa-sign-out {
+    position: absolute;
+    top: 12px;
+    right: 110px;
+    font-size: 38px;
+}
+.fa-search{
+    position: absolute;
+    top: 12px;
+    right: 200px;
+    font-size: 38px;
+}
+.fa-shopping-cart{
+    position: absolute;
+    top: 12px;
+    right: 270px;
+    font-size: 38px;
+}
+.fa-cog{
+    position: absolute;
+    top: 12px;
+    right: 370px;
+    font-size: 38px;
+}
+.fa-shield{
+    position: absolute;
+    top: 12px;
+    right: 430px;
+    font-size: 38px;
+}
+.login:hover{
+    /*эффект увеличения*/
+    transform: scale(1.01);
+     /* эффект изменения формы
+    border-radius:24%; */
+ }
+.dws-menu *{
+    margin: 0;
+    padding: 0;  
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */ 
+    
+}
+/*скрыть маркеры у списка*/
+.dws-menu ul,
+.dws-menu ol{
+    list-style: none;
+}
+/*список по горизонтали-flex*/
+.dws-menu > ul{
+    display: flex;
+    justify-content: top;
+     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */            
+  background: #b5bdc8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+
+}
+.dws-menu > ul li a{
+    display: block;
+    /*отступы*/
+    padding: 25px 40px 25px 40px;
+    font-size: 14px;
+    color: #454547;
+    text-decoration: none;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+.dws-menu > ul li{
+    position: relative;
+    border-right: 1px solid #c7c8ca;
+
+}
+.dws-menu > ul li > a i.fa{
+position: absolute;
+top: 12px;
+left:  1px;
+font-size: 38px;
+
+}
+.dws-menu > ul li:first-child{
+    border-left: 1px solid #b2b3b5;
+}
+.dws-menu > ul li:last-child{
+    border-right: 1px solid #babbbb;
+}
+.dws-menu li a:hover{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cfe7fa+0,6393c1+100;Grey+Blue+3D */
+
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
+}
+/*Sub menu*/
+.dws-menu li ul{
+    position: absolute ;
+    min-width: 150px;
+    display: none;
+}
+.dws-menu li > ul li{
+    border: 1px solid #c7c8ca;
+}
+.dws-menu li > ul li a{
+    padding: 10px;
+    text-transform: none;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4cbd4+0,9ba4ab+29,4a606c+100 */
+background: #c4cbd4; /* Old browsers */
+background: -moz-linear-gradient(top,  #c4cbd4 0%, #9ba4ab 29%, #4a606c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c4cbd4 0%,#9ba4ab 29%,#4a606c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c4cbd4 0%,#9ba4ab 29%,#4a606c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4cbd4', endColorstr='#4a606c',GradientType=0 ); /* IE6-9 */
+
+} 
+/*Sub sub menu*/
+.dws-menu li > ul li ul{
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+.dws-menu li:hover > ul{
+    display: block;
+}
+
+/**/

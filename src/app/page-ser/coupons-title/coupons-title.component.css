@@ -1,0 +1,126 @@
+.flex-cont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.dws-wrapper {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    height: 80%;
+    overflow: auto;
+  
+    
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    
+    background: linear-gradient(#627379,#7E878A, #ADD8E6,#7E878A,#627379);
+    
+    border-radius: 5px;
+}
+.imageBox {
+    outline: 1px solid #ADD8E6; 
+    height: 350px;
+    width: 250px;
+    position: relative;
+    margin: 15px;
+    background-color: rgba(73, 157, 173, 0.2);
+ 
+}
+.img {
+    position: absolute;
+    left: 2%;
+}
+.img  {
+    width: 80px;
+    height: 100px;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    filter: grayscale(.2);
+    
+}
+.img:hover {
+    -webkit-transform: scale(1.2) rotate(-10deg);
+    -moz-transform: scale(1.2) rotate(-10deg);
+    -ms-transform: scale(1.2) rotate(-10deg);
+    -o-transform: scale(1.2) rotate(-10deg);
+    transform: scale(1.2) rotate(-10deg);
+    filter: grayscale(0);
+}
+
+
+table {
+    width: 100%;
+    position: absolute;
+    top: 54%;
+   
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+a{
+    font-size: 18px;   
+    text-align: center;
+    color: #ADD8E6 ;
+    text-decoration: none;  
+    position: absolute;
+   
+}
+.cat{
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+    text-align: center;
+    color: #ADD8E6 ;
+    text-decoration: none;  
+    
+}
+.title {
+   text-transform: uppercase;
+    top: 33%;
+    left: 2%;
+    width: 97%;
+}
+.desc {
+  
+    top: 2%;
+    left: 50%;
+}
+
+button{
+    cursor: pointer;
+    padding: 5px 5px;
+    background-color: rgb(222, 241, 245);
+    border: none;
+    color: rgb(21, 64, 73) ;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 10px;
+    margin: 2px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+.button:hover {
+      opacity: 1}
+
+.del
+{
+    position: absolute;
+    top: 97%;
+    left: 0%;
+}
+.up{
+    position: absolute;
+    top: 93%;
+    left: 30%;
+}
+
