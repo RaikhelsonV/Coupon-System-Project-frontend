@@ -1,0 +1,41 @@
+<!-- <div>
+    <img style="width: 170px; height: 170px;" src="{{coupon.imageURL}}">
+
+
+    <h2>{{ coupon.description }}</h2>
+    <h2> {{ coupon.title }}</h2>
+
+    <h3>Price: {{ coupon.price }} ₪</h3>
+
+    <h3>Amount: {{ coupon.amount }} pc.</h3>
+    <h3>Category: {{ coupon.category }}</h3>
+    <h3>Start date: {{ coupon.startDate }}</h3>
+    <h3>End date: {{ coupon.endDate }}</h3>
+</div>
+<br><br>
+
+<button class="buy" (click)="purchaseCoupon()">buy Coupon</button>
+<button class="rel" (click)="releaseCoupon()">implemented</button> -->
+
+<div class="flex">
+    <div class="box-img">
+        <img style="width: 190px; height: 270px;" src="{{coupon.imageURL}}">
+    </div>
+    <div class="box-p">
+        <h2>{{ coupon.description }}</h2>
+        <h2 style="font-size: 20px;"> {{ coupon.title }}</h2>
+        <h2 style="font-size: 16px; "> {{ coupon.price }} ₪</h2>
+        <button class="buy" (click)="purchaseCoupon()">buy Coupon</button>
+        <button class="rel" (click)="releaseCoupon()">implemented</button>
+
+        <div class="details">
+            <input type="checkbox" id="toggle">
+            <label for="toggle">More details</label>
+            <div class="toggled">
+                <h3>Amount: {{ coupon.amount }} pc.</h3><br>
+                <h3>Category: {{ coupon.category }}</h3><br>
+                <h3>Start date: {{ coupon.startDate }}</h3><br>
+                <h3>End date: {{ coupon.endDate }}</h3><br>
+            </div>
+        </div>
+    </div>

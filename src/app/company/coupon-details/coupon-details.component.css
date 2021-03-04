@@ -1,0 +1,35 @@
+div {
+    margin-top: 20px;
+    height: 90%;
+    overflow: auto;
+    text-transform: uppercase;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#627379, #7E878A, #ADD8E6, #7E878A, #627379);
+    border-radius: 5px;
+}
+
+img {
+    height: 350px;
+}
+
+h2 {
+    margin: 2px;
+    color: lightblue;
+    font-weight: 500;
+}
+
+h3 {
+    font-weight: 500;
+    color: rgb(222, 241, 245);
+    font-size: 14px;
+    margin: 2px;
+}

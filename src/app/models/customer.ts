@@ -1,11 +1,10 @@
-import { Coupon } from './coupon';
+import {Coupon} from './coupon';
 
-export class Customer{
-
-
-    public constructor(
-        public id?: number,
-        public firstName?: string,
-        public lastName?: string,
-        public coupons?: Coupon[] ){ }
- }
+export class Customer {
+  public constructor(
+    public id?: number,
+    public firstName?: string,
+    public lastName?: string,
+    public coupons?: Coupon[]) {
+  }
+}

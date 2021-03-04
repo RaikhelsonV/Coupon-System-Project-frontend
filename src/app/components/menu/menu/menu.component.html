@@ -1,0 +1,18 @@
+<nav class="dws-menu">
+    <a class="login" title="Login" routerLink="login"><i class="fa fa-sign-in"
+      style="font-size:40px;  color:lightblue;"></i></a>
+    <button title="Logout" (click)=logout()><i class="fa fa-sign-out" 
+      style="font-size:40px;color:rgb(72, 103, 114);"></i></button>
+
+    <ul>
+        <li><a routerLink="home"><i class="fa fa-home" style="font-size:40px;color:lightblue;"></i>Home</a></li>
+        <li><a routerLink="company"><i class="fa fa-building" style="font-size:40px;color:lightblue;"></i>Company</a> </li>
+        <li><a routerLink="coupon"><i class="fa fa-ticket" style="font-size:40px; color:lightblue;"></i>Coupon</a>
+            <ul>
+                <li><a href="coupon-cat/1">#</a></li>
+                <li style="z-index: 5;"><a href="coupon-cat/2">#</a></li>
+                <li style="z-index: 5;"><a href="coupon-cat/3">#</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>

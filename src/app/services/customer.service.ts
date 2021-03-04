@@ -1,70 +1,63 @@
-import { Injectable } from '@angular/core';
-import { Customer } from '../models/customer';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Coupon } from '../models/coupon';
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Customer} from '../models/customer';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Coupon} from '../models/coupon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-
-
   private url = 'http://localhost:8080/api/';
 
-  constructor(private httpClient: HttpClient, private router:Router) { }
- 
- /* public getAllCustomerHttp( ): Observable<Customer[]>{
-    return this.httpClient.get<Customer[]>("/assets/json/customer.json");
-  }*/
-
-  // public  getCustomerAccountByLasttName(token: string,last_name: string):Observable<Customer>{
-  //   return this.httpClient.get<Customer>(this.url +"customer/"+"account/" +token +"/"+ last_name,{withCredentials:true} );
-
-  // }
-
-
-
-  public getCustomerRest(token: String, id: number): Observable<Customer> {
-    return this.httpClient.get<Customer>(this.url +"getCustomerById/"+token + "/" + id,{withCredentials:true} );
-   }
-   public getCustomerR(token: String ): Observable<Customer> {
-    return this.httpClient.get<Customer>(this.url +"getCustomer/"+token ,{withCredentials:true} );
-   }
- 
- 
-  public getAllCustomersRest(token: String): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(this.url + "admin/" + token + "/getAllCustomers");
- 
+  constructor(private httpClient: HttpClient) {
   }
 
-  public getCouponsByDescriptionLikeRest(token:String,description: String): Observable<Coupon[]>{
-    return this.httpClient.get<Coupon[]>(this.url +"description/"+ token + "/"+description,{withCredentials:true});
-  }
-   public getCouponsByTitleRest(token:String,title: String) {
-    return this.httpClient.get<Coupon[]>(this.url +"title/"+ token + "/"+title,{withCredentials:true});
-  }
-  public getAllCouponsByPriceLessThan(token:String,price: number): Observable<Coupon[]>{
-    return this.httpClient.get<Coupon[]>(this.url +"priceLessThan/"+token + "/"+ price,{withCredentials:true});
-  } 
-  public  getAllByPriceIsGreaterThan(token:String,price: number): Observable<Coupon[]>{
-    return this.httpClient.get<Coupon[]>(this.url +"priceGreaterThan/"+token + "/"+ price,{withCredentials:true});}
-
-
-  public updateCusCustomerRest(token: String,customer_id:number ,customer: Customer): Observable<Customer> {
-    return this.httpClient.put<Customer>(this.url + "customer/" + token + "/updateCustomer/" + customer_id, customer, {withCredentials: true});
+  public getCustomer(token: string): Observable<Customer> {
+    return this.httpClient.get<Customer>(this.url + 'customer/' + token, {withCredentials: true});
   }
 
-  public releaseCusCouponRest(token: String, coupon_id: number): Observable<any> {
-    return this.httpClient.post<any>(this.url + "customer/" + token + "/useCoupon/" + coupon_id, {withCredentials: true});
+  public getCustomerById(token: String, id: number): Observable<Customer> {
+    return this.httpClient.get<Customer>(this.url + 'customer-id/' + token + '/' + id, {withCredentials: true});
+  }
+
+  public getAllCustomerCoupons(token: string): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer-coupons/' + token);
+  }
+  public getAllCustomerCouponsTotalPrice(token: string): Observable<any> {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer-coupons-price/' + token);
+  }
+
+  public getCouponsByDescriptionLikeRest(token: string, description: string): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer/' + token + '/coupons-description/' + description, {withCredentials: true});
+  }
+
+  public getCouponsByTitleRest(token: string, title: string) {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer/' + token + '/coupons-title/' + title, {withCredentials: true});
+  }
+
+  public getAllCouponsByPriceLessThan(token: string, price: number): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer/' + token + '/coupons-price-less-than/' + price, {withCredentials: true});
+  }
+
+  public updateCustomerRest(token: string, customer_id: number, customer: Customer): Observable<Customer> {
+    return this.httpClient.put<Customer>(this.url + token + '/update-customer/' + customer_id, customer, {withCredentials: true});
+  }
+
+  public releaseCusCouponRest(token: string, coupon_id: number): Observable<any> {
+    return this.httpClient.post<any>(this.url + 'customer/' + token + '/release-coupon/' + coupon_id, {withCredentials: true});
   }
   public purchaseCoupon(token: String, coupon_id: number): Observable<any> {
-    return this.httpClient.post<any>(this.url + "customer/" + token + "/addCoupon/" + coupon_id, {withCredentials: true});
+    return this.httpClient.post<any>(this.url + 'customer/' + token + '/purchase-coupon/' + coupon_id, {withCredentials: true});
+  }
+  public changeAmount(token: String, coupon_id: number, amount:number): Observable<Coupon> {
+    return this.httpClient.put<Coupon>(this.url + token + '/change-amount/' + coupon_id +'/' +amount, {withCredentials: true});
   }
 
-  public getAllCustomerCoupons(token:String): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(this.url + "customerCoup/" + token);
+//////////////////////////////////////////////////////////////////
+  public getAllCustomersRest(token: String): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(this.url + 'admin/' + token + '/getAllCustomers');
+
   }
 
 

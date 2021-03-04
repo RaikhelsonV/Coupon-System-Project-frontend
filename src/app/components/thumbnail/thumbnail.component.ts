@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-thumbnail',
@@ -14,7 +13,7 @@ export class ThumbnailComponent {
   @Output()
   public imageClicked: EventEmitter<string> = new EventEmitter<string>();
 
-  public imageHasBeenClicked(): void{
+  public imageHasBeenClicked(): void {
     this.imageClicked.emit(this.imageSource);
   }
 }

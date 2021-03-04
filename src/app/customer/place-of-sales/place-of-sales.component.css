@@ -1,0 +1,136 @@
+div {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.box-img {
+    max-width: 200px;
+}
+
+.box-p {
+    margin-left: 50px;
+}
+
+h2 {
+    width: 350px;
+    text-align: left;
+    margin: 2px;
+    padding: 0px;
+    color: lightblue;
+    font-weight: 500;
+}
+
+.details {
+    margin-top: 80px;
+}
+
+.toggled {
+    padding-top: 20px;
+}
+
+input[type='checkbox']:checked~.toggled {
+    visibility: hidden;
+}
+
+input[type='checkbox']~.toggled {
+    visibility: visible;
+    float: left;
+    margin-top: 5px;
+}
+
+label {
+    color: rgb(11, 29, 32);
+    font-size: 10px;
+}
+
+h3 {
+    float: left;
+    font-weight: 500;
+    color: rgb(34, 85, 95);
+    font-size: 10px;
+    margin: 2px;
+}
+
+button {
+    text-transform: uppercase;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    border: none;
+    display: block;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.buy {
+    position: absolute;
+    top: 35%;
+    font-size: 20px;
+    color: rgb(21, 64, 73);
+    background-color: lightgreen;
+}
+
+.rel {
+    margin-top: 20px;
+    position: absolute;
+    top: 40%;
+    font-size: 10px;
+    color: rgb(21, 64, 73);
+    background-color: lightblue;
+}
+
+.buy::before,
+.buy::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(64, 81, 86, 0.3);
+    top: 0;
+    left: -100%;
+    opacity: .5;
+    transition: .3s;
+}
+
+.rel::before,
+.rel::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(64, 81, 86, 0.3);
+    top: 0;
+    right: -100%;
+    opacity: .5;
+    transition: .3s;
+}
+
+.buy::after,
+.rel::after {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.buy:hover::before,
+.buy:hover::after {
+    left: 0;
+}
+
+.rel:hover::before,
+.rel:hover::after {
+    right: 0;
+}
+
+.buy:hover {
+    color: rgb(14, 122, 108);
+}
+
+.rel:hover {
+    color: crimson;
+}

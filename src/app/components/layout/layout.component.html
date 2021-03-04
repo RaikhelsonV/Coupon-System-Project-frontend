@@ -1,21 +1,23 @@
 <section>
-    <header>
-        <app-header></app-header>
-       
-        <app-menu ></app-menu>
-                        
-    </header>
-    <aside>
-        <app-search-coupon *ngIf="modeService.clientType == '1'"></app-search-coupon>
-    </aside>
-    <main>
-       <router-outlet></router-outlet>
+  <header>
+    <app-menu-customer *ngIf="modeService.clientType==modeService.ROLE_CUSTOMER"></app-menu-customer>
+    <app-menu *ngIf="modeService.clientType == modeService.ROLE_USER"></app-menu>
+    <app-menu-company *ngIf="modeService.clientType == modeService.ROLE_COMPANY"></app-menu-company>
+    <app-menu-admin *ngIf="modeService. clientType == modeService.ROLE_ADMIN"></app-menu-admin>
+  </header>
 
-    </main>
-    <aside>
-     
-    </aside>
-    <footer>
-        <app-footer></app-footer>
-    </footer>
+  <aside>
+    <app-search-coupon *ngIf="modeService.clientType == modeService.ROLE_CUSTOMER"></app-search-coupon>
+  </aside>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <aside>
+  </aside>
+
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </section>

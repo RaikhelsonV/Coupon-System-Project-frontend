@@ -1,3 +1,4 @@
 export abstract class Client {
-    constructor(private id: number) {}
+  constructor(private id: number) {
+  }
 }

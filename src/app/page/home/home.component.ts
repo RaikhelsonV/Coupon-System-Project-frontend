@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Coupon } from 'src/app/models/coupon';
-import { CouponService } from 'src/app/services/coupon.service';
+import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {Coupon} from 'src/app/models/coupon';
+import {CouponService} from 'src/app/services/coupon.service';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +13,13 @@ export class HomeComponent implements OnInit {
   public imageWidth: number;
   public imageHeight: number;
 
-  public constructor(private title: Title,private couponService: CouponService ){}
+  public constructor(private title: Title, private couponService: CouponService) {
+  }
 
-    public ngOnInit(): void {
-    this.imageWidth = 200;
-    this.imageHeight = 300;
-    this.title.setTitle("Home");
+  public ngOnInit(): void {
+    this.imageWidth = 150;
+    this.imageHeight = 230;
+    this.title.setTitle('Home');
   }
 
 }
