@@ -1,23 +1,23 @@
 .root {
     margin: auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
     display: flex;
-    height: 100%;
+    height: 90%;
     justify-content: center;
     align-items: center;
-
 }
-.dws-form{
-background-color: rgb(21, 64, 73, 0.2) ;
-padding: 40px;
-width: 330px;
-position: absolute;
-top: 20%;
-box-shadow: 0 0 30px rgba(0, 0, 0, .4);
 
+.dws-form {
+    background-color: rgb(21, 64, 73, 0.2);
+    padding: 20px;
+    width: 330px;
+    position: absolute;
+    margin-top: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .4);
 }
-.dws-form input[type= "text"],.dws-form input[type = "password"]{
+
+.dws-form input[type="text"],
+.dws-form input[type="password"] {
     border: 0;
     background: rgb(21, 64, 73, 0.25);
     display: block;
@@ -31,14 +31,18 @@ box-shadow: 0 0 30px rgba(0, 0, 0, .4);
     color: white;
     border-radius: 24px;
     transition: 0.25s;
-} 
+}
+
 
 /*расширение*/
-.dws-form input[type= "text"]:focus,.dws-form input[type = "password"]:focus{
+
+.dws-form input[type="text"]:focus,
+.dws-form input[type="password"]:focus {
     width: 280px;
     border-color: lightcoral;
 }
-.dws-form button{
+
+.dws-form button {
     border: 0;
     background: none;
     display: block;
@@ -53,36 +57,19 @@ box-shadow: 0 0 30px rgba(0, 0, 0, .4);
     border-radius: 24px;
     transition: 0.25s;
 }
-.dws-form button:hover{
+
+.dws-form button:hover {
     background: rgb(0, 255, 170);
 }
-select{
-     background: rgb(21, 64, 73, 0.25);
-    /*по середине*/
-    margin: 20px auto;
-    border: 2px solid lightblue;
-    padding: 14px 40px;
-    /*убрать стрелочку*/
-    appearance: none;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-       width: 200px;
-    /*размер шрифта*/
-    font-size: large;
-    text-align-last: center;
+
+.dws-form h1 {
+    color: lightblue;
+    margin: 0;
     text-transform: uppercase;
+    font-weight: 500;
 }
 
-.select{
-    display: block;
-
-}
-.select:hover {
-    background-color: rgb(54, 115, 136);
-    color: white;
-}
-a{
+a {
     color: lightcoral;
     text-decoration: none;
     text-transform: uppercase;

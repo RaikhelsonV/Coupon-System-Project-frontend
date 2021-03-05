@@ -22,7 +22,7 @@ export class CouponsTitleComponent implements OnInit {
       console.log('Coup Comp. getCouponsByTitle()');
       console.log(coupons);
     }, err => {
-      alert('Error:' + err.message);
+      alert('Dear customer, log into your account!');
     });
 
   }

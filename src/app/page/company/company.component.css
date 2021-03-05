@@ -29,7 +29,7 @@
     margin: 15px;
 }
 
-img {
+.img {
     margin: 0 auto;
     width: 140px;
     padding: 15px;
@@ -44,7 +44,7 @@ img {
     /* Убираем небольшой отступ снизу */
 }
 
-img:hover {
+.img:hover {
     transform: scale(1.15);
     /* Увеличиваем масштаб */
 }

@@ -43,7 +43,7 @@ export class PlaceOfSalesComponent implements OnInit {
       this.router.navigate(['/coupon']);
 
     }, err => {
-      alert('Dear customer, log into your account: ' + err);
+      alert('Dear customer, log into your account!');
     });
   }
 
@@ -55,7 +55,7 @@ export class PlaceOfSalesComponent implements OnInit {
       alert('Coupon has been succesfully released!');
       this.router.navigate(['/coupon']);
     }, err => {
-      alert('Dear customer, log into your account: ' + err);
+      alert('Dear customer, log into your account!');
     });
   }
   

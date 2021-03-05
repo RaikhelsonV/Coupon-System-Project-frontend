@@ -22,7 +22,7 @@ export class CouponsPriceComponent implements OnInit {
       console.log('Coup Comp. getCouponsByPriceLessThan()');
       console.log(coupons);
     }, err => {
-      alert('Error:' + err.message);
+      alert('Dear customer, log into your account!');
     });
   }
 

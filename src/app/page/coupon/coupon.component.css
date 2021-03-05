@@ -19,6 +19,7 @@
 }
 
 .box {
+    padding-top: 20px;
     height: 380px;
     width: 260px;
     position: relative;

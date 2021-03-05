@@ -52,7 +52,7 @@ export class CustomerAccountComponent implements OnInit {
       this.totalPrice();
       window.location.reload();
     }, err => {
-      alert('Dear customer, log into your account: ' + err);
+      alert('Dear customer, log into your account! ' + err);
     });
   }
   public totalPrice() {
