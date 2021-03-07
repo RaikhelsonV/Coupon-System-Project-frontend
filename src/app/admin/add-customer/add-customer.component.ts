@@ -8,7 +8,7 @@ import {AdminService} from 'src/app/services/admin.service';
   styleUrls: ['./add-customer.component.css']
 })
 export class AddCustomerComponent {
-  token: string = localStorage.getItem('token');
+  public token: string = localStorage.getItem('token');
   public customer = new Customer();
 
   public constructor(private adminService: AdminService) {
@@ -19,10 +19,10 @@ export class AddCustomerComponent {
     First_Name: ${this.customer.firstName}
     Last_Name: ${this.customer.lastName}
     `);
-    this.adminService.addCustomerRest(this.token, this.customer).subscribe(p => {
-      alert('Customer has been succesfully added!:' + p.id);
+    this.adminService.addCustomer(this.token, this.customer).subscribe(customer => {
+      alert('Customer has been successfully added!:' + customer.id);
     }, err => {
-      alert('error: Unable to add this customer!' + err.message);
+      alert('error: Unable to add this getAllCustomers!' + err.message);
     });
   }
 }

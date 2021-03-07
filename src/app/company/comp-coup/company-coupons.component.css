@@ -123,7 +123,7 @@ button {
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     display: inline-block;
     text-decoration: none;
 }

@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Company} from 'src/app/models/company';
-import {ActivatedRoute, Router} from '@angular/router';
-import {CompaniesService} from 'src/app/services/companies.service';
+import {ActivatedRoute} from '@angular/router';
 import {Coupon} from 'src/app/models/coupon';
-import {CouponService} from 'src/app/services/coupon.service';
-import { GeneralService } from 'src/app/services/general.service';
+import {GeneralService} from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-company-details',
@@ -12,26 +10,25 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./company-details.component.css']
 })
 export class CompanyDetailsComponent implements OnInit {
-  token: string = localStorage.getItem('token');
+  public token: string = localStorage.getItem('token');
   public coupon: Coupon;
   public coupons: Coupon[];
   public company: Company;
   public id: number = null;
 
-  public constructor(private activatedRoute: ActivatedRoute, private generalService:GeneralService,
-                     private router: Router, private couponService: CouponService) {
+  public constructor(private activatedRoute: ActivatedRoute, private generalService: GeneralService) {
   }
 
   public ngOnInit() {
     this.id = +this.activatedRoute.snapshot.params.id;
-    this.generalService.getCompanyByIdRest(this.id).subscribe(p => {
-      this.company = p;
+    this.generalService.getCompanyById(this.id).subscribe(company => {
+      this.company = company;
     }, err => {
       alert('Error:' + err.message);
     });
 
-    this.generalService.getAllCompanyCouponsRest(this.id).subscribe(c => {
-      this.coupons = c;
+    this.generalService.getAllCompanyCoupons(this.id).subscribe(coupons => {
+      this.coupons = coupons;
     }, err => {
       alert('Error: ' + err.message);
     });

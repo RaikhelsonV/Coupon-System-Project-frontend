@@ -25,14 +25,16 @@ export class LoginComponent {
       this.login();
       console.dir(this.modeService);
     }, err => {
-      alert('Error:' + err.message);
+      alert('Error: check email and password!');
     });
   }
 
   public login() {
     this.loginService.login(this.email, this.password).subscribe(token => {
-      localStorage.setItem('token', token.token),
-        this.modeService.mode = this.modeService.LOGGED_IN;
+      localStorage.setItem('token', token.token);
+      localStorage.setItem('email', this.email);
+      localStorage.setItem('password', this.password);
+      this.modeService.mode = this.modeService.LOGGED_IN;
       this.router.navigate(['/home']);
       console.dir(this.modeService);
     });
@@ -41,9 +43,6 @@ export class LoginComponent {
 
   public register(): void {
     this.router.navigate(['/registration']);
-  }
-
-  public ngOnInit(): void {
   }
 
 

@@ -1,28 +1,28 @@
 <img *ngIf="!coupons" src="/assets/load/6c.gif" height="400px" width="350px" style="margin-top: 20px;">
 
 <div *ngIf="coupons" class="dws-wrapper">
-    <div class="flex-cont">
-        <div *ngFor="let p of coupons" class="imageBox">
-            <img src="{{p.imageURL}}" width=80px; height=100px;>
-            <a class="title" style="cursor: pointer;" routerLink="/sales/{{p.id}}">{{p.title}}</a>
-            <a class="shimmer" style="cursor: pointer;" routerLink="/sales/{{p.id}}">{{p.description}}</a>
-            <h1>{{p.price}}₪</h1>
-            <table>
-                <tbody class="body">
-                    <tr>
-                        <td class="cat">category: {{p.category}}</td>
-                    </tr>
-                    <tr>
-                        <td>amount: {{p.amount}} pc.</td>
-                    </tr>
+  <div class="flex-cont">
+    <div *ngFor="let c of coupons" class="imageBox">
+      <img src="{{c.imageURL}}" width=80px; height=100px;>
+      <a class="title" style="cursor: pointer;" routerLink="/sales/{{c.id}}">{{c.title}}</a>
+      <a class="shimmer" style="cursor: pointer;" routerLink="/sales/{{c.id}}">{{c.description}}</a>
+      <h1>{{c.price}}₪</h1>
+      <table>
+        <tbody class="body">
+        <tr>
+          <td class="cat">category: {{c.category}}</td>
+        </tr>
+        <tr>
+          <td>amount: {{c.amount}} pc.</td>
+        </tr>
 
-                    <tr>
-                        <td>start date: {{p.startDate}}</td>
-                    </tr>
-                    <tr>
-                        <td>end date: {{p.endDate}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <tr>
+          <td>start date: {{c.startDate}}</td>
+        </tr>
+        <tr>
+          <td>end date: {{c.endDate}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
+  </div>

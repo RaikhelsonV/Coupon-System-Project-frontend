@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {Coupon} from 'src/app/models/coupon';
-import {CouponService} from 'src/app/services/coupon.service';
-import {ActivatedRoute} from '@angular/router';
 import {Company} from 'src/app/models/company';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AdminService} from 'src/app/services/admin.service';
@@ -13,11 +11,11 @@ import {AdminService} from 'src/app/services/admin.service';
 })
 export class AdminUpdateCouponComponent {
   public company: Company;
-  coupon = new Coupon();
-  token: string = localStorage.getItem('token');
-  Validation: boolean = true;
+  public coupon = new Coupon();
+  public token: string = localStorage.getItem('token');
+  public Validation: boolean = true;
 
-  constructor(private adminService: AdminService, private couponService: CouponService, private activatedRoute: ActivatedRoute) {
+  constructor(private adminService: AdminService) {
   }
 
   idFormControl = new FormControl('');
@@ -69,11 +67,11 @@ export class AdminUpdateCouponComponent {
 
     this.coupon.imageURL = this.imageURLFormControl.value;
 
-    this.adminService.updateAdminCouponRest(this.token, this.coupon.id, this.coupon).subscribe(c => {
-      this.coupon = c;
+    this.adminService.updateAdminCoupon(this.token, this.coupon.id, this.coupon).subscribe(coupon => {
+      this.coupon = coupon;
 
-      console.log(c);
-      alert('The Coupon ' + c.title + ' was updated succesfully');
+      console.log(coupon);
+      alert('The Coupon ' + coupon.title + ' was updated successfully');
 
     }, err => {
       console.log('error: Unable to update this coupon!' + err.message);

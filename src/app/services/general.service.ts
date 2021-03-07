@@ -14,16 +14,16 @@ export class GeneralService {
   constructor(public datepipe: DatePipe, private httpClient: HttpClient) {
   }
 
-  public getAllCouponsRest(): Observable<Coupon[]> {
+  public getAllCoupons(): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>(this.url + 'user/coupons', { withCredentials: true });
   }
-  public getAllCompaniesRest(): Observable<Company[]> {
+  public getAllCompanies(): Observable<Company[]> {
     return this.httpClient.get<Company[]>(this.url + 'user/companies', { withCredentials: true });
   }
-  public getCompanyByIdRest(id: number): Observable<Company> {
+  public getCompanyById(id: number): Observable<Company> {
     return this.httpClient.get<Company>(this.url + 'company-id/' + id, { withCredentials: true });
   }
-  public getAllCompanyCouponsRest(id: number): Observable<Coupon[]> {
+  public getAllCompanyCoupons(id: number): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>(this.url + 'company-id-coupons/' + id, { withCredentials: true });
   }
 

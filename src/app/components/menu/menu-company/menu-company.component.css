@@ -58,16 +58,17 @@ button {
 /*список по горизонтали-flex*/
 
 .dws-menu>ul {
+    z-index: 3;
     display: flex;
     justify-content: top;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */
     background: #b5bdc8;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    background: -moz-linear-gradient(top, #b5bdc8 0%, #71868e 36%, #2d3639 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    background: -webkit-linear-gradient(top, #b5bdc8 0%, #71868e 36%, #2d3639 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    background: linear-gradient(to bottom, #b5bdc8 0%, #71868e 36%, #2d3639 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b', GradientType=0);
     /* IE6-9 */
@@ -131,11 +132,11 @@ button {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c4cbd4+0,9ba4ab+29,4a606c+100 */
     background: #c4cbd4;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #c4cbd4 0%, #9ba4ab 29%, #4a606c 100%);
+    background: -moz-linear-gradient(top, #c4cbd4 0%, #9caab0 29%, #4f5e63 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #c4cbd4 0%, #9ba4ab 29%, #4a606c 100%);
+    background: -webkit-linear-gradient(top, #c4cbd4 0%, #9caab0 29%, #4f5e63 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #c4cbd4 0%, #9ba4ab 29%, #4a606c 100%);
+    background: linear-gradient(to bottom, #c4cbd4 0%, #9caab0 29%, #4f5e63 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#c4cbd4', endColorstr='#4a606c', GradientType=0);
     /* IE6-9 */

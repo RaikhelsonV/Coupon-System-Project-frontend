@@ -19,7 +19,7 @@ export class CouponCategoryComponent implements OnInit {
     let category = +this.activatedRoute.snapshot.params.category;
     localStorage.setItem('category', category.toString());
 this.cat;
-    this.couponService.getCouponByCategoryRest(category).subscribe(coupons => {
+    this.couponService.getCouponByCategory(category).subscribe(coupons => {
       this.coupons = coupons;
 
       console.dir(this.coupons);

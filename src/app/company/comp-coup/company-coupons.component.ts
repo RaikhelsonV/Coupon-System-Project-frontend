@@ -23,7 +23,7 @@ export class CompanyCouponsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.companiesService.getCompanyRest(this.token).subscribe(c => {
+    this.companiesService.getCompany(this.token).subscribe(c => {
       this.company = c;
       localStorage.setItem('company_id', c.id.toString());
     }, err => {
@@ -43,7 +43,7 @@ export class CompanyCouponsComponent implements OnInit {
   }
 
   public delCoupon(coupon_id: number) {
-    this.companiesService.deleteCouponRest(this.token, coupon_id).subscribe(msg => {
+    this.companiesService.deleteCoupon(this.token, coupon_id).subscribe(msg => {
       alert('Coupon has been succesfully deleted!');
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = 'reload';

@@ -9,9 +9,9 @@ import {AdminService} from 'src/app/services/admin.service';
   styleUrls: ['./admin-update-company.component.css']
 })
 export class AdminUpdateCompanyComponent {
-  company = new Company();
-  token: string = localStorage.getItem('token');
-  Validation: boolean = true;
+  public company = new Company();
+  public token: string = localStorage.getItem('token');
+  public Validation: boolean = true;
 
   constructor(private adminService: AdminService) {
   }
@@ -31,7 +31,7 @@ export class AdminUpdateCompanyComponent {
     this.company.name = this.nameFormControl.value;
     this.company.imageURL = this.imageURLFormControl.value;
 
-    this.adminService.updateAdminCompanyRest(this.token, this.company.id, this.company)
+    this.adminService.updateAdminCompany(this.token, this.company.id, this.company)
       .subscribe(c => {
         this.company = c;
         console.log(c);

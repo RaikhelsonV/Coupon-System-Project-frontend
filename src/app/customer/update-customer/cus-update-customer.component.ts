@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/models/customer';
-import { CustomerService } from 'src/app/services/customer.service';
-import { UserService } from 'src/app/services/user.service';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ModeService } from 'src/app/services/mode.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/models/user';
+import {Component, OnInit} from '@angular/core';
+import {Customer} from 'src/app/models/customer';
+import {CustomerService} from 'src/app/services/customer.service';
+import {UserService} from 'src/app/services/user.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ModeService} from 'src/app/services/mode.service';
+import {Router} from '@angular/router';
+import {User} from 'src/app/models/user';
 
 @Component({
   selector: 'app-cus-update-customer',
@@ -20,15 +20,11 @@ export class CusUpdateCustomerComponent implements OnInit {
   public email = localStorage.getItem('email');
   public password = localStorage.getItem('password');
   public user = new User();
-  public newEmail = '';
-  public newPassword = '';
-
 
   constructor(private customerService: CustomerService,
-    public modeService: ModeService,
-    public router: Router,
-    public userService: UserService,
-    private activatedRoute: ActivatedRoute) {
+              public modeService: ModeService,
+              public router: Router,
+              public userService: UserService) {
   }
 
   ngOnInit() {
@@ -49,7 +45,6 @@ export class CusUpdateCustomerComponent implements OnInit {
     });
   }
 
-
   newEmailFormControl = new FormControl('');
   newPasswordFormControl = new FormControl('');
 
@@ -57,15 +52,14 @@ export class CusUpdateCustomerComponent implements OnInit {
     {
       newEmail: this.newEmailFormControl,
       newPassword: this.newPasswordFormControl,
-
     });
 
   public UpdateCustomer() {
-    this.customerService.updateCustomerRest(this.token, this.customer).subscribe(c => {
-      this.customer = c;
+    this.customerService.updateCustomer(this.token, this.customer).subscribe(customer => {
+      this.customer = customer;
 
-      console.log(c);
-      alert('The Customer ' + c.lastName + ' was updated succesfully!');
+      console.log(customer);
+      alert('The Customer ' + customer.lastName + ' was updated successfully!');
       this.router.navigate(['/customer-account']);
 
     }, err => {
@@ -73,19 +67,18 @@ export class CusUpdateCustomerComponent implements OnInit {
     });
   }
 
-
   public UpdateUser() {
-    this.userService.updateUser(this.email, this.password, 
-      this.newEmailFormControl.value, this.newPasswordFormControl.value).subscribe(u => {
-      this.user = u;
+    this.userService.updateUser(this.email, this.password,
+      this.newEmailFormControl.value, this.newPasswordFormControl.value).subscribe(user => {
+      this.user = user;
 
-      console.log(u);
-      alert('The User was updated succesfully!');
+      console.log(user);
+      alert('The User was updated successfully!');
       this.router.navigate(['/customer-account']);
     }, err => {
       this.router.navigate(['/customer-account']);
       console.log('error: Unable to update this user!' + err.message);
-    }); 
+    });
   }
 
 }

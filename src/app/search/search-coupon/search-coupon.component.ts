@@ -13,7 +13,7 @@ import {CouponsPriceComponent} from 'src/app/search/coupons-price/coupons-price.
 })
 export class SearchCouponComponent implements OnInit {
   public coupons: Coupon[];
-  token: string = localStorage.getItem('token');
+  public token: string = localStorage.getItem('token');
   public id: number;
   public title: string;
   public description: string;
@@ -27,7 +27,6 @@ export class SearchCouponComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
   public getCouponsByTitle() {

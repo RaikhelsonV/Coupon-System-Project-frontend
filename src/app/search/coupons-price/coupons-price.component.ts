@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Coupon} from 'src/app/models/coupon';
 import {CustomerService} from 'src/app/services/customer.service';
-import {CouponService} from 'src/app/services/coupon.service';
 
 @Component({
   selector: 'app-coupons-price',
@@ -10,10 +9,10 @@ import {CouponService} from 'src/app/services/coupon.service';
 })
 export class CouponsPriceComponent implements OnInit {
   public coupons: Coupon[];
-  token: string = localStorage.getItem('token');
-  price: number = parseFloat(localStorage.getItem('price'));
+  public token: string = localStorage.getItem('token');
+  public price: number = parseFloat(localStorage.getItem('price'));
 
-  constructor(private customerService: CustomerService, private couponService: CouponService) {
+  constructor(private customerService: CustomerService) {
   }
 
   public ngOnInit(): void {
@@ -22,7 +21,7 @@ export class CouponsPriceComponent implements OnInit {
       console.log('Coup Comp. getCouponsByPriceLessThan()');
       console.log(coupons);
     }, err => {
-      alert('Dear customer, log into your account!');
+      alert('Dear getAllCustomers, log into your account!');
     });
   }
 

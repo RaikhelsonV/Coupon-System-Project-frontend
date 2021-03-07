@@ -13,23 +13,17 @@ export class CouponService {
 
   constructor(public datepipe: DatePipe, private httpClient: HttpClient) {
   }
-  public getCouponByIdRest(id: number): Observable<Coupon> {
+
+  public getCouponById(id: number): Observable<Coupon> {
     return this.httpClient.get<Coupon>(this.url + 'coupon-id/' + id, {withCredentials: true});
   }
-  
-  public getCouponByCategoryRest(category: number): Observable<Coupon[]> {
+
+  public getCouponByCategory(category: number): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>(this.url + 'coupons-category/' + category, {withCredentials: true});
   }
+
 /////////////////////////////////////////////////////////////////////////
-
-  public getAllCouponsAdmin(token: String): Observable<Coupon[]> {
-    return this.httpClient.get<Coupon[]>(this.url + 'admin/' + token + '/getAllCoup', {withCredentials: true});
-  }
-
-
-
-
-  public getCouponByCustIdRest(token: String): Observable<Coupon> {
+  public getCouponByCustomerId(token: string): Observable<Coupon> {
     return this.httpClient.get<Coupon>(this.url + 'getCouponById/' + token, {withCredentials: true});
   }
 

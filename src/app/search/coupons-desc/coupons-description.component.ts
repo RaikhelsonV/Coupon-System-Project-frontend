@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Coupon} from 'src/app/models/coupon';
 import {CustomerService} from 'src/app/services/customer.service';
-import {CouponService} from 'src/app/services/coupon.service';
 
 @Component({
   selector: 'app-coupons-description',
@@ -10,19 +9,19 @@ import {CouponService} from 'src/app/services/coupon.service';
 })
 export class CouponsDescriptionComponent implements OnInit {
   public coupons: Coupon[];
-  token: string = localStorage.getItem('token');
-  description: string = localStorage.getItem('description');
+  public token: string = localStorage.getItem('token');
+  public description: string = localStorage.getItem('description');
 
-  constructor(private customerService: CustomerService, private couponService: CouponService) {
+  constructor(private customerService: CustomerService) {
   }
 
   public ngOnInit(): void {
-    this.customerService.getCouponsByDescriptionLikeRest(this.token, this.description).subscribe(coupons => {
+    this.customerService.getCouponsByDescriptionLike(this.token, this.description).subscribe(coupons => {
       this.coupons = coupons;
       console.log('Coup Comp. getCouponsByDesc()');
       console.log(coupons);
     }, err => {
-      alert('Dear customer, log into your account!');
+      alert('Dear getAllCustomers, log into your account!');
     });
   }
 

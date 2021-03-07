@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Company } from 'src/app/models/company';
-import { Coupon } from 'src/app/models/coupon';
-import { CompaniesService } from 'src/app/services/companies.service';
-import { CouponService } from 'src/app/services/coupon.service';
-import { CustomerService } from 'src/app/services/customer.service';
-import { ModeService } from 'src/app/services/mode.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Coupon} from 'src/app/models/coupon';
+import {CouponService} from 'src/app/services/coupon.service';
+import {CustomerService} from 'src/app/services/customer.service';
+import {ModeService} from 'src/app/services/mode.service';
 
 @Component({
   selector: 'app-place-of-sales',
@@ -14,21 +12,21 @@ import { ModeService } from 'src/app/services/mode.service';
 })
 export class PlaceOfSalesComponent implements OnInit {
   public coupon: Coupon;
-  token: string = localStorage.getItem('token');
-
+  public token: string = localStorage.getItem('token');
 
   constructor(public modeService: ModeService,
-    private activatedRoute: ActivatedRoute,
-    private couponService: CouponService,
-    private customerService: CustomerService,
-    private router: Router,) { }
+              private activatedRoute: ActivatedRoute,
+              private couponService: CouponService,
+              private customerService: CustomerService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.modeService.clientType = this.modeService.ROLE_CUSTOMER;
     let id = +this.activatedRoute.snapshot.params.id;
-    this.couponService.getCouponByIdRest(id).subscribe(p => {
-      localStorage.setItem('coupon_id', p.id.toString());
-      this.coupon = p;
+    this.couponService.getCouponById(id).subscribe(coupon => {
+      localStorage.setItem('couponId', coupon.id.toString());
+      this.coupon = coupon;
     }, err => {
       alert('Error:' + err.message);
     });
@@ -49,7 +47,7 @@ export class PlaceOfSalesComponent implements OnInit {
 
   public releaseCoupon(): void {
     console.log(this.coupon.id);
-    this.customerService.releaseCusCouponRest(this.token, this.coupon.id).subscribe(coupon => {
+    this.customerService.releaseCusCoupon(this.token, this.coupon.id).subscribe(coupon => {
       this.coupon = coupon;
       this.totalPrice();
       alert('Coupon has been succesfully released!');
@@ -58,14 +56,13 @@ export class PlaceOfSalesComponent implements OnInit {
       alert('Dear customer, log into your account!');
     });
   }
-  
+
   public totalPrice() {
-    this.customerService.getAllCustomerCouponsTotalPrice(this.token).subscribe(p => {
-      localStorage.setItem('price', p);
-      console.dir(p);
+    this.customerService.getAllCustomerCouponsTotalPrice(this.token).subscribe(totalPrice => {
+      localStorage.setItem('totalPrice', totalPrice);
+      console.dir(totalPrice);
     });
   }
-
 
 
 }

@@ -1,23 +1,23 @@
 <img *ngIf="!coupons" src="/assets/load/1.gif" height="400px" width="350px" style="margin-top: 20px;">
 
 <div *ngIf="coupons" class="dws-wrapper">
-    <div *ngFor="let p of coupons" class="box">
-        <a style="cursor: pointer;" routerLink="/sales/{{p.id}}"> {{p.description}}</a><br>
-        <a style="cursor: pointer;" routerLink="/sales/{{p.id}}"> {{p.title}}</a><br>
-        <h1>{{p.price}}₪</h1>
-        <img class="img" src="{{p.imageURL}}">
+    <div *ngFor="let c of coupons" class="box">
+        <a style="cursor: pointer;" routerLink="/sales/{{c.id}}"> {{c.description}}</a><br>
+        <a style="cursor: pointer;" routerLink="/sales/{{c.id}}"> {{c.title}}</a><br>
+        <h1>{{c.price}}₪</h1>
+        <img class="img" src="{{c.imageURL}}">
         <table>
-            <a style="cursor: pointer;" class="cat" routerLink="/coupon-category/{{p.category}}">
-                <td>categoty: {{p.category}}</td>
+            <a style="cursor: pointer;" class="cat" routerLink="/coupon-category/{{c.category}}">
+                <td>categoty: {{c.category}}</td>
             </a>
             <tr>
-                <td>amount: {{p.amount}} pc.</td>
+                <td>amount: {{c.amount}} pc.</td>
             </tr>
             <tr>
-                <td>start_date: {{p.startDate}}</td>
+                <td>start_date: {{c.startDate}}</td>
             </tr>
             <tr>
-                <td>end_date: {{p.endDate}}</td>
+                <td>end_date: {{c.endDate}}</td>
             </tr>
         </table>
     </div>

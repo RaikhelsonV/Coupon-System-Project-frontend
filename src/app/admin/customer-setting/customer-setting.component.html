@@ -1,0 +1,16 @@
+<img *ngIf="!customers" src="/assets/load/5.gif" style="margin-top: 2%;">
+
+<div class="customers">
+    <table *ngIf="customers">
+        <tr>
+            <th mat-sort-th>First Name</th>
+            <th mat-sort-th>Last Name</th>
+        </tr>
+
+        <tr class="row" *ngFor="let p of customers">
+            <td>{{p.firstName}}</td>
+            <td>{{p.lastName}}</td>
+            <td><button title="Delete Customer" class="button" (click)=deleteCustomer(p.id)>Delete</button></td>
+        </tr>
+    </table>
+</div>

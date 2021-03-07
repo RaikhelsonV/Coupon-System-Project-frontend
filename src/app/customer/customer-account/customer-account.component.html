@@ -1,27 +1,29 @@
 <div>
-    <h2>Welcome to your account
-        <a class="update-customer" style="cursor: pointer;" data-tooltip="ACCOUNT DETAILS" routerLink="/update-customer">{{customer.lastName }} </a> №{{customer.id}} !</h2>
-    <h1>shopping bag</h1>
+  <h2>Welcome to your account
+    <a class="update-customer" style="cursor: pointer;" data-tooltip="ACCOUNT DETAILS"
+       routerLink="/update-customer">{{customer.lastName }} №{{customer.id}} ! </a></h2>
+  <h1>shopping bag</h1>
 </div>
 
 <div class="coupons">
-    <table *ngIf="coupons">
-        <tr class="row" *ngFor="let p of coupons">
-            <td> <img src="{{p.imageURL}}" width=80px; height=100px;></td>
-            <td> <a style="cursor: pointer;" routerLink="/coupon-details/{{p.id}}">{{p.title}}</a></td>
-            <td> <a style="cursor: pointer;" routerLink="/coupons-description">{{p.description}}</a> </td>
-            <td>category: <a style="cursor: pointer;" routerLink="/coupon-category/{{p.category}}">{{p.category}}</a>
-            </td>
-            <td>{{p.price}} ₪</td>
-            <td style="width: 80px;">
-                <button class="delete" style="cursor: pointer;" title="Delete Coupon" (click)=delCoupon(p.id)>
-                    <i class="fa fa-times" style="font-size:15px;"></i>remove</button>
-            </td>
-        </tr>
-    </table>
+  <table *ngIf="coupons">
+    <tr class="row" *ngFor="let c of coupons">
+      <td><img src="{{c.imageURL}}" width=80px; height=100px;></td>
+      <td><a style="cursor: pointer;" routerLink="/coupon-details/{{c.id}}">{{c.title}}</a></td>
+      <td><a style="cursor: pointer;" routerLink="/coupons-description">{{c.description}}</a></td>
+      <td>category: <a style="cursor: pointer;" routerLink="/coupon-category/{{c.category}}">{{c.category}}</a>
+      </td>
+      <td>{{c.price}} ₪</td>
+      <td style="width: 80px;">
+        <button class="delete" style="cursor: pointer;" title="Delete Coupon" (click)=delCoupon(c.id)>
+          <i class="fa fa-times" style="font-size:15px;"></i>remove
+        </button>
+      </td>
+    </tr>
+  </table>
 
 </div>
 
-<h1>Total payment: {{price}} ₪</h1>
+<h1>Total payment: {{totalPricePur}} ₪</h1>
 
 <a class="continue" routerLink="/coupon">continue shopping</a>

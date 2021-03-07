@@ -13,7 +13,7 @@ export class AddCouponComponent {
   token: string = localStorage.getItem('token');
   public coupon = new Coupon();
 
-  public constructor(private companiesService: CompaniesService,public router: Router, 
+  public constructor(private companiesService: CompaniesService,public router: Router,
     public modeService:ModeService) {
   }
   ngOnInit() {
@@ -23,7 +23,7 @@ export class AddCouponComponent {
   public addCoupon(): void {
     console.log(this.token);
     console.log(this.coupon);
-    this.companiesService.addCouponRest(this.token, this.coupon).subscribe(c => {
+    this.companiesService.addCoupon(this.token, this.coupon).subscribe(c => {
       this.router.navigate(['/company-coupons']);
       alert('Coupon has been succesfully added! Coupon ID:' + c.id);
     }, err => {

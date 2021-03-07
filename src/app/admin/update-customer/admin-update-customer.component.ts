@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {CustomerService} from 'src/app/services/customer.service';
 import {Customer} from 'src/app/models/customer';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AdminService} from 'src/app/services/admin.service';
@@ -10,14 +9,14 @@ import {AdminService} from 'src/app/services/admin.service';
   styleUrls: ['./admin-update-customer.component.css']
 })
 export class AdminUpdateCustomerComponent {
-  customer = new Customer();
-  token: string = localStorage.getItem('token');
-  Validation: boolean = true;
+  public customer = new Customer();
+  public token: string = localStorage.getItem('token');
+  public Validation: boolean = true;
 
-  constructor(private adminService: AdminService, private customerService: CustomerService) {
+  constructor(private adminService: AdminService) {
   }
 
-  idFormControl = new FormControl(localStorage.getItem('customer_id'));
+  idFormControl = new FormControl(localStorage.getItem('customerId'));
   firstNameFormControl = new FormControl('');
   lastNameFormControl = new FormControl('');
 
@@ -33,14 +32,14 @@ export class AdminUpdateCustomerComponent {
     this.customer.firstName = this.firstNameFormControl.value;
     this.customer.lastName = this.lastNameFormControl.value;
 
-    this.adminService.updateAdminCustomerRest(this.token, this.customer.id, this.customer).subscribe(c => {
-      this.customer = c;
+    this.adminService.updateAdminCustomer(this.token, this.customer.id, this.customer).subscribe(customer => {
+      this.customer = customer;
 
-      console.log(c);
-      alert('The Customer ' + c.lastName + ' was updated succesfully');
+      console.log(customer);
+      alert('The Customer ' + customer.lastName + ' was updated successfully');
 
     }, err => {
-      console.log('error: Unable to update this customer!' + err.message);
+      console.log('error: Unable to update this getAllCustomers!' + err.message);
     });
   }
 

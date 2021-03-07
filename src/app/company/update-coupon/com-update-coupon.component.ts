@@ -27,7 +27,7 @@ export class ComUpdateCouponComponent implements OnInit {
   }
   ngOnInit() {
     this.modeService.clientType = this.modeService.ROLE_COMPANY;
-    this.couponService.getCouponByIdRest(this.couponId).subscribe(p => {
+    this.couponService.getCouponById(this.couponId).subscribe(p => {
       this.coupon = p;
       console.dir(p);
     }, err => {
@@ -37,7 +37,7 @@ export class ComUpdateCouponComponent implements OnInit {
   }
 
   UpdateCoupon() {
-    this.companiesService.updateCouponRest(this.token, this.coupon).subscribe(c => {
+    this.companiesService.updateCoupon(this.token, this.coupon).subscribe(c => {
       this.coupon = c;
       console.dir(c.title);
       alert('The Coupon ' + c.title + ' was updated succesfully');

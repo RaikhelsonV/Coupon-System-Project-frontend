@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {CompaniesService} from 'src/app/services/companies.service';
 import {Company} from 'src/app/models/company';
-import { GeneralService } from 'src/app/services/general.service';
+import {GeneralService} from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-company',
@@ -10,10 +9,6 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  public showImage(imageSource: string): void {
-    alert('User clicked on image' + imageSource);
-  }
-
   public companies: Company[];
   token: string = localStorage.getItem('token');
 
@@ -23,13 +18,17 @@ export class CompanyComponent implements OnInit {
   public ngOnInit(): void {
     this.title.setTitle('Companies');
     setTimeout(() => {
-      this.generalsService.getAllCompaniesRest().subscribe(companies => {
+      this.generalsService.getAllCompanies().subscribe(companies => {
         this.companies = companies;
       }, err => {
         alert('Error:' + err.message);
       });
 
     }, 1000);
+  }
+
+  public showImage(imageSource: string): void {
+    alert('User clicked on image' + imageSource);
   }
 
 }

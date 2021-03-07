@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Company } from '../models/company';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Coupon } from '../models/coupon';
-import { Router } from '@angular/router';
-import { ModeService } from './mode.service';
+import {Injectable} from '@angular/core';
+import {Company} from '../models/company';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Coupon} from '../models/coupon';
+import {Router} from '@angular/router';
+import {ModeService} from './mode.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,39 +16,29 @@ export class CompaniesService {
   public constructor(private httpClient: HttpClient, private router: Router, private modeService: ModeService) {
   }
 
-  public getCompanyRest(token: string): Observable<Company> {
-    return this.httpClient.get<Company>(this.url + 'company/' + token, { withCredentials: true });
+  public getCompany(token: string): Observable<Company> {
+    return this.httpClient.get<Company>(this.url + 'company/' + token, {withCredentials: true});
   }
 
   public getAllCompanyCoupons(token: string): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>(this.url + 'company-coupons/' + token);
   }
 
-  public updateCompanyRest(token: string, company_id: number, company: Company): Observable<Company> {
-    return this.httpClient.put<Company>(this.url + token + '/update-company/' + company_id, company, { withCredentials: true });
+  public updateCompany(token: string, companyId: number, company: Company): Observable<Company> {
+    return this.httpClient.put<Company>(this.url + token + '/update-company/' + companyId, company, {withCredentials: true});
   }
 
-  public updateCouponRest(token: string, coupon: Coupon): Observable<Coupon> {
-    return this.httpClient.put<Coupon>(this.url + token + '/update-coupon', coupon, { withCredentials: true });
+  public updateCoupon(token: string, coupon: Coupon): Observable<Coupon> {
+    return this.httpClient.put<Coupon>(this.url + token + '/update-coupon', coupon, {withCredentials: true});
   }
 
-  public addCouponRest(token: string, coupon: Coupon): Observable<Coupon> {
-    return this.httpClient.post<Coupon>(this.url + token + '/add-coupon', coupon, { withCredentials: true });
+  public addCoupon(token: string, coupon: Coupon): Observable<Coupon> {
+    return this.httpClient.post<Coupon>(this.url + token + '/add-coupon', coupon, {withCredentials: true});
   }
 
-  public deleteCouponRest(token: string, coupon_id: number): Observable<Coupon> {
-    return this.httpClient.delete<Coupon>(this.url + token + '/delete-coupon/' + coupon_id, { withCredentials: true });
+  public deleteCoupon(token: string, couponId: number): Observable<Coupon> {
+    return this.httpClient.delete<Coupon>(this.url + token + '/delete-coupon/' + couponId, {withCredentials: true});
   }
-
-
-  /////////////////////////////////////////////////
-
-
-  public getAllCompaniesAdmin(token: String): Observable<Company[]> {
-    return this.httpClient.get<Company[]>(this.url + 'admin/' + token + '/getAllComp');
-  }
-
-
 
 
 }

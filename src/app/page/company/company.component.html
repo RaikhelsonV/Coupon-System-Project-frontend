@@ -3,9 +3,9 @@
 <div *ngIf="companies" class="dws-wrapper">
     <p class="now">List of "Book Publishing Companies".</p>
     <div class="flex-cont">
-        <div *ngFor="let p of companies" class="box">
-            <img class="img" style="cursor: pointer; width: 140px; height: 140px;" routerLink="/company-details/{{p.id}}" src="{{p.imageURL}}">
-            <a style="cursor: pointer;" routerLink="/company-details/{{p.id}}">{{p.name}}</a>
+        <div *ngFor="let c of companies" class="box">
+            <img class="img" style="cursor: pointer; width: 140px; height: 140px;" routerLink="/company-details/{{c.id}}" src="{{c.imageURL}}">
+            <a style="cursor: pointer;" routerLink="/company-details/{{c.id}}">{{c.name}}</a>
         </div>
     </div>
 </div>

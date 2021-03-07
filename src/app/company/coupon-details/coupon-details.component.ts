@@ -23,7 +23,7 @@ export class CouponDetailsComponent implements OnInit {
   public ngOnInit() {
     this.modeService.clientType = this.modeService.ROLE_COMPANY;
     let id = +this.activatedRoute.snapshot.params.id;
-    this.couponService.getCouponByIdRest(id).subscribe(p => {
+    this.couponService.getCouponById(id).subscribe(p => {
       localStorage.setItem('coupon_id', p.id.toString());
       this.coupon = p;
     }, err => {

@@ -18,10 +18,10 @@ export class UpdateCompanyComponent implements OnInit {
 
   constructor(private companiesService: CompaniesService, public router: Router,public modeService: ModeService) {
   }
- 
+
   ngOnInit() {
     this.modeService.clientType = this.modeService.ROLE_COMPANY;
-    this.companiesService.getCompanyRest(this.token).subscribe(company => {
+    this.companiesService.getCompany(this.token).subscribe(company => {
       this.company = company;
       console.log(company);
     }, err => {
@@ -44,7 +44,7 @@ export class UpdateCompanyComponent implements OnInit {
     this.company.name = this.nameFormControl.value;
     this.company.imageURL = this.imageURLFormControl.value;
 
-    this.companiesService.updateCompanyRest(this.token, this.id,this.company).subscribe(c => {
+    this.companiesService.updateCompany(this.token, this.id,this.company).subscribe(c => {
       this.company = c;
       this.router.navigate(['/company-coupons']);
       console.log(c);

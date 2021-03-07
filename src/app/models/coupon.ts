@@ -3,7 +3,7 @@ import {Company} from './company';
 export class Coupon {
   public constructor(
     public company?: Company,
-    public company_id?: number,
+    public companyId?: number,
     public id?: number,
     public title?: string,
     public startDate?: string,

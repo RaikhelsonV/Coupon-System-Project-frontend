@@ -8,7 +8,7 @@ import {AdminService} from 'src/app/services/admin.service';
   styleUrls: ['./add-company.component.css']
 })
 export class AddCompanyComponent {
-  token: string = localStorage.getItem('token');
+  public token: string = localStorage.getItem('token');
   public company = new Company();
 
   public constructor(private adminService: AdminService) {
@@ -19,8 +19,8 @@ export class AddCompanyComponent {
     Name: ${this.company.name}
     ImageURL: ${this.company.imageURL}
     `);
-    this.adminService.addCompanyRest(this.token, this.company).subscribe(p => {
-      alert('Company has been succesfully added! Company ID: ' + p.id);
+    this.adminService.addCompany(this.token, this.company).subscribe(company => {
+      alert('Company has been successfully added! Company ID: ' + company.id);
     }, err => {
       alert('error: Unable to add this company!' + err.message);
     });

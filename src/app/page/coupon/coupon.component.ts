@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {CouponService} from 'src/app/services/coupon.service';
 import {Coupon} from 'src/app/models/coupon';
-import { GeneralService } from 'src/app/services/general.service';
+import {GeneralService} from 'src/app/services/general.service';
 
 @Component({
   selector: 'app-coupon',
@@ -10,10 +9,6 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./coupon.component.css']
 })
 export class CouponComponent implements OnInit {
-  public showImage(imageSource: string): void {
-    alert('User clicked on image' + imageSource);
-  }
-
   public coupons: Coupon[];
   token: string = localStorage.getItem('token');
 
@@ -23,13 +18,17 @@ export class CouponComponent implements OnInit {
   public ngOnInit(): void {
     this.title.setTitle('Coupon');
     setTimeout(() => {
-      this.generalService.getAllCouponsRest().subscribe(coupons => {
+      this.generalService.getAllCoupons().subscribe(coupons => {
         this.coupons = coupons;
         console.dir(this.coupons);
       }, err => {
         alert('Error:' + err.message);
       });
     }, 1000);
+  }
+
+  public showImage(imageSource: string): void {
+    alert('User clicked on image' + imageSource);
   }
 }
 

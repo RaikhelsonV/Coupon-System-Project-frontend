@@ -17,16 +17,18 @@ export class UserService {
     });
   }
 
-  public changeEmail(email: string, password: string): Observable<any> {
-    return this.httpClient.post<any>(this.url + 'changeEmail/' + email + '/' + password, {
+  public updateUser(email: string, password: string, newEmail: string, newPassword: string,): Observable<any> {
+    return this.httpClient.post<any>(this.url +
+      'update-user/' + email + '/' + password + '/' + newEmail + '/' + newPassword,
+      {responseType: 'json'}
+    );
+  }
+
+  public getUsersByEmailAndPassword(email: string, password: string): Observable<any> {
+    return this.httpClient.get<any>(this.url + 'user/' + email + '/' + password, {
       responseType: 'json'
     });
   }
 
-  public getUsersByEmailAndPassword(email: string, password: string): Observable<any> {
-    return this.httpClient.get<any>(this.url + 'users/' + email + '/' + password, {
-      responseType: 'json'
-    });
-  }
 
 }
