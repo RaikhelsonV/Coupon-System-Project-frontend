@@ -1,9 +1,14 @@
 <div>
     <img style="width: 170px; height: 170px;" src="{{coupon.imageURL}}">
     <!-- <img src="/assets/coupon/{{coupon.id}}.jpg"> -->
-    <h2> {{ coupon.title }}</h2>
-    <h2>{{ coupon.description }}</h2>
-    <h3>Price: {{ coupon.price }} ₪</h3>
+    <h2>
+        <a style="cursor: pointer;" routerLink="/sales/{{coupon.id}}"> {{ coupon.title }}</a>
+    </h2>
+    <h2>
+        <a style="cursor: pointer;" routerLink="/sales/{{coupon.id}}">{{ coupon.description }} </a></h2>
+    <h3>
+        <a style="cursor: pointer;" routerLink="/sales/{{coupon.id}}">Price: {{ coupon.price }} ₪</a>
+    </h3>
     <h3>Amount: {{ coupon.amount }} pc.</h3>
     <h3>Category: {{ coupon.category }}</h3>
     <h3>Start date: {{ coupon.startDate }}</h3>

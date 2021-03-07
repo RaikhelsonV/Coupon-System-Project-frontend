@@ -21,6 +21,12 @@ export class UpdateCompanyComponent implements OnInit {
  
   ngOnInit() {
     this.modeService.clientType = this.modeService.ROLE_COMPANY;
+    this.companiesService.getCompanyRest(this.token).subscribe(company => {
+      this.company = company;
+      console.log(company);
+    }, err => {
+      alert('Error:' + err.message);
+    });
   }
 
   idFormControl = new FormControl(localStorage.getItem('company_id'));

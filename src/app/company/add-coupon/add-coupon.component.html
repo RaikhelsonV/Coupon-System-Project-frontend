@@ -4,10 +4,10 @@
     <span *ngIf="titleInfo.errors?.pattern && titleInfo.touched">Name must start with a capital letter!</span>
     <br><br>
 
-    <input #srartDateInfo="ngModel" style="font-family: 'Times New Roman', Times, serif; font-size: 18px;" type="text" placeholder="Start Date.." [(ngModel)]="coupon.startDate" name="startDate">
+    <input #srartDateInfo="ngModel" type="text" placeholder="Start Date.." [(ngModel)]="coupon.startDate" name="startDate">
     <br><br>
 
-    <input #endDateInfo="ngModel" style="font-family: 'Times New Roman', Times, serif; font-size: 18px;" type="text" placeholder="End Date..." [(ngModel)]="coupon.endDate" name="endDate">
+    <input #endDateInfo="ngModel" type="text" placeholder="End Date..." [(ngModel)]="coupon.endDate" name="endDate">
     <br><br>
 
     <input #categoryInfo="ngModel" required min="0" max="100" type="number" placeholder="Category..." [(ngModel)]="coupon.category" name="category">
@@ -30,5 +30,6 @@
     <input #imageURLInfo="ngModel" type="text" placeholder="URL..." [(ngModel)]="coupon.imageURL" name="imageURL">
     <br><br>
 
-    <button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>
 </form>
+
+<button [disabled]="!formInfo.form.valid" (click)="addCoupon()">Add Coupon</button>

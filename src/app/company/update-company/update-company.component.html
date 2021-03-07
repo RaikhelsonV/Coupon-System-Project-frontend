@@ -1,7 +1,6 @@
 <form action="">
-    <input type="text" placeholder="id" [formControl]="idFormControl" name="id">
     <input type="text" [(ngModel)]="company.name" placeholder="name" [formControl]="nameFormControl" name="name">
-    <input type="text" placeholder="imageURL" [formControl]="imageURLFormControl" name="imageURL">
+    <input type="text" [(ngModel)]="company.imageURL" placeholder="imageURL" [formControl]="imageURLFormControl" name="imageURL">
     <br>
     <button (click)="UpdateCompany() ">Update</button>
 </form>

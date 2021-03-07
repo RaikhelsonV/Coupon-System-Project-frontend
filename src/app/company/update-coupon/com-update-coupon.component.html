@@ -1,15 +1,21 @@
-<form action="">
-    <!-- <h2 class="titular">Update {{coupon.title}}</h2>
-  <label>id</label> -->
-    <input class="form" type="number" placeholder="id" [formControl]="idFormControl" name="id">
-    <input class="form" type="text" placeholder="title" [formControl]="titleFormControl" name="title">
-    <input class="form" type="text" placeholder="startDate" [formControl]="startDateFormControl" name="startDate">
-    <input class="form" type="text" placeholder="endDate" [formControl]="endDateFormControl" name="endDate">
-    <input class="form" type="number" placeholder="category" [formControl]="categoryFormControl" name="category">
-    <input class="form" type="number" placeholder="amount" [formControl]="amountFormControl" name="amount">
-    <input class="form" type="text" placeholder="description" [formControl]="descriptionFormControl" name="description">
-    <input type="number" placeholder="price" [formControl]="priceFormControl" name="price">
-    <input type="text" placeholder="imageURL" [formControl]="imageURLFormControl" name="imageURL">
-    <button (click)="UpdateCoupon() ">Update</button>
+<form #formInfo="ngForm" action="">
+    <label for="title">Title*</label>
+    <input class="form" type="text" #titleInfo="ngModel" [placeholder]="coupon.title" [(ngModel)]="coupon.title" name="title">
+    <label for="description">Description*</label>
+    <input class="form" type="text" #descriptionInfo="ngModel" [placeholder]="coupon.description" [(ngModel)]="coupon.description" name="description">
+    <label for="startDate">start Date*</label>
+    <input class="form" type="text" #startDateInfo="ngModel" [placeholder]="coupon.startDate" [(ngModel)]="coupon.startDate" name="startDate">
+    <label for="endDate">end Date*</label>
+    <input class="form" type="text" #endDateInfo="ngModel" [placeholder]="coupon.endDate" [(ngModel)]="coupon.endDate" name="endDate">
+    <label for="category">category*</label>
+    <input class="form" type="number" #categoryInfo="ngModel" [placeholder]="coupon.category" [(ngModel)]="coupon.category" name="category">
+    <label for="amount">amount*</label>
+    <input class="form" type="number" #amountInfo="ngModel" [placeholder]="coupon.amount" [(ngModel)]="coupon.amount" name="amount">
+    <label for="price">price*</label>
+    <input type="number" #priceInfo="ngModel" [placeholder]="coupon.price" [(ngModel)]="coupon.price" name="price">
+    <label for="imageURL">imageURL*</label>
+    <input type="text" #imageURLInfo="ngModel" [placeholder]="coupon.imageURL" [(ngModel)]="coupon.imageURL" name="imageURL">
+
 
 </form>
+<button (click)="UpdateCoupon() ">Update</button>

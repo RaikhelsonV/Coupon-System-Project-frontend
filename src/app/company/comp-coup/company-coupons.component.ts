@@ -3,6 +3,7 @@ import { CompaniesService } from 'src/app/services/companies.service';
 import { Company } from 'src/app/models/company';
 import { Coupon } from 'src/app/models/coupon';
 import { Router } from '@angular/router';
+import { CouponService } from 'src/app/services/coupon.service';
 
 @Component({
   selector: 'app-company-coupons',
@@ -16,7 +17,9 @@ export class CompanyCouponsComponent implements OnInit {
   public coupon: Coupon;
   public coupons: Coupon[];
 
-  constructor(private companiesService: CompaniesService, public router: Router) {
+  constructor(private companiesService: CompaniesService,
+    private couponService: CouponService,
+    public router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,7 +32,10 @@ export class CompanyCouponsComponent implements OnInit {
 
     this.companiesService.getAllCompanyCoupons(this.token).subscribe(coupons => {
       this.coupons = coupons;
-      console.dir(this.coupons);
+      coupons.forEach(function (coupon) {
+        coupon.id
+        console.log(coupon)
+      })
     }, err => {
       alert('Error:' + err.message);
     });
@@ -46,6 +52,10 @@ export class CompanyCouponsComponent implements OnInit {
     }, err => {
       console.log('error:' + err);
     });
+  }
+  public saveCouponId(couponId:number){
+    localStorage.setItem('compCouponId', couponId.toString());
+    this.router.navigate(['/update-coupon']);
   }
 
 }
