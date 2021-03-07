@@ -14,9 +14,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CustomerAccountComponent implements OnInit {
   public customer: Customer;
-  public lastName: string = localStorage.getItem('lastName');
-  token: string = localStorage.getItem('token');
-  price: any = localStorage.getItem('price');
+  public token: string = localStorage.getItem('token');
+  public price: any = localStorage.getItem('price');
   public coupon = new Coupon;
 
   public coupons: Coupon[];
@@ -32,8 +31,9 @@ export class CustomerAccountComponent implements OnInit {
 
     this.customerService.getCustomer(this.token).subscribe(p => {
       this.customer = p;
+      console.dir(p);
       localStorage.setItem('customer_id', p.id.toString());
-    }, err => {
+      }, err => {
       alert('Error:' + err.message);
     });
 
@@ -44,17 +44,19 @@ export class CustomerAccountComponent implements OnInit {
       alert('Error:' + err.message);
     });
   }
+
   public delCoupon(coupon_id: number) {
     console.log(coupon_id);
     this.customerService.releaseCusCouponRest(this.token, coupon_id)
-    .subscribe(msg => {
-      alert('Coupon has been succesfully released!');
-      this.totalPrice();
-      window.location.reload();
-    }, err => {
-      alert('Dear customer, log into your account! ' + err);
-    });
+      .subscribe(msg => {
+        alert('Coupon has been succesfully released!');
+        this.totalPrice();
+        window.location.reload();
+      }, err => {
+        alert('Dear customer, log into your account! ' + err);
+      });
   }
+  
   public totalPrice() {
     this.customerService.getAllCustomerCouponsTotalPrice(this.token).subscribe(p => {
       localStorage.setItem('price', p);

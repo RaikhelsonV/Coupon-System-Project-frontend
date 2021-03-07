@@ -1,7 +1,14 @@
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(222, 241, 245);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+}
+
 form {
-    background: url(https://media.architecturaldigest.com/photos/5ab021fad91fc303af543aa3/master/pass/56797527.jpg);
     background-size: cover;
-    margin: 40px auto;
+    margin: 20px auto;
     opacity: 0.7;
     height: 70%;
     overflow: auto;
@@ -26,16 +33,6 @@ form {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.menu-box h2 {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    color: rgb(15, 73, 39);
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-}
-
 .menu-box input {
     padding: 12px 20px;
     margin: 8px 0;
@@ -48,14 +45,21 @@ form {
     opacity: 0.7;
 }
 
+label {
+    text-transform: uppercase;
+    text-align: left;
+    display: block;
+    margin-left: 71px;
+}
+
 .up {
     border: 0;
     background: #709ca5;
     display: block;
-    margin: 20px auto;
+    margin: 5px auto;
     text-align: center;
     border: 2px solid lightblue;
-    padding: 14px 40px;
+    padding: 5px 50px;
     text-transform: uppercase;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 18px;

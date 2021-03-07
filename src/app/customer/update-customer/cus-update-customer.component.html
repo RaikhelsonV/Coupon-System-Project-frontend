@@ -1,14 +1,17 @@
-<form action="" class="menu-box">
-    <!-- <h2 class="titular">Update {{customer.first_name}}</h2>
-    <label>id</label> -->
-    <!-- <input class="form" type="text" placeholder="id"  [formControl]="idFormControl" name="id"> -->
+<h1>Account details</h1>
+<form #formInfo="ngForm" class="menu-box">
+    <label for="firstName">First Name*</label>
+    <input class="form" #firstNameInfo="ngModel" required pattern="^[A-Z].*$" type="text" [placeholder]="customer.firstName" [(ngModel)]="customer.firstName" name="firstName">
+    <span style="position: absolute; top: 0;left: 8% " *ngIf="firstNameInfo.errors?.required && firstNameInfo.touched">Missing firstName</span>
+    <br>
+    <label for="lastName">Last Name*</label>
+    <input class="form" #lastNameInfo="ngModel" required pattern="^[A-Z].*$" type="text" [placeholder]="customer.lastName" [(ngModel)]="customer.lastName" name="lastName">
+    <button class="up" (click)="UpdateCustomer() ">Save</button>
 
-
-    <input class="form" type="text" placeholder="firstName" [formControl]="firstNameFormControl" name="firstName">
-
-
-    <input class="form" type="text" placeholder="lastName" [formControl]="lastNameFormControl" name="lastName">
-
-    <button class="up" (click)="UpdateCustomer() ">Update</button>
-
+    <label for="newEmail">email</label>
+    <input class="form" type="text" [placeholder]="user.email" [formControl]="newEmailFormControl" name="newEmail">
+    <br>
+    <label for="newPassword">password</label>
+    <input class="form" type="text" [placeholder]="user.password" [formControl]="newPasswordFormControl" name="newPassword">
+    <button class="up" (click)="UpdateUser() ">Update</button>
 </form>
