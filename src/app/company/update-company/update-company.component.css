@@ -1,12 +1,31 @@
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(222, 241, 245);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+}
+
 form {
-    background: url(https://upload.wikimedia.org/wikipedia/commons/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg);
     background-size: cover;
-    margin: 30px auto;
-    opacity: 0.8;
+    margin: 20px auto;
+    opacity: 0.7;
     height: 70%;
     overflow: auto;
+}
+
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#627379, #7E878A, #ADD8E6, #7E878A, #627379);
     border-radius: 5px;
-    padding-top: 70px;
+}
+
+.menu-box {
+    border-radius: 5px;
+    padding: 20px;
     width: 420px;
     font-size: 14px;
     color: #454547;
@@ -14,17 +33,7 @@ form {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#627379, #7E878A, #ADD8E6, #7E878A, #627379);
-    border-radius: 5px;
-}
-
-input {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+.menu-box input {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -36,14 +45,21 @@ input {
     opacity: 0.7;
 }
 
-button {
+label {
+    text-transform: uppercase;
+    text-align: left;
+    display: block;
+    margin-left: 71px;
+}
+
+.up {
     border: 0;
     background: #709ca5;
     display: block;
-    margin: 20px auto;
+    margin: 5px auto;
     text-align: center;
     border: 2px solid lightblue;
-    padding: 14px 40px;
+    padding: 5px 50px;
     text-transform: uppercase;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     font-size: 18px;
@@ -54,6 +70,13 @@ button {
     transition: 0.25s;
 }
 
-button:hover {
+.up:hover {
     background: rgb(0, 255, 170);
+}
+
+span {
+    color: red;
+    margin: 10px;
+    position: absolute;
+    font-size: large;
 }

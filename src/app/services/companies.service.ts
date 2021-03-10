@@ -24,8 +24,8 @@ export class CompaniesService {
     return this.httpClient.get<Coupon[]>(this.url + 'company-coupons/' + token);
   }
 
-  public updateCompany(token: string, companyId: number, company: Company): Observable<Company> {
-    return this.httpClient.put<Company>(this.url + token + '/update-company/' + companyId, company, {withCredentials: true});
+  public updateCompany(token: string, company: Company): Observable<Company> {
+    return this.httpClient.put<Company>(this.url + token + '/update-company', company, {withCredentials: true});
   }
 
   public updateCoupon(token: string, coupon: Coupon): Observable<Coupon> {

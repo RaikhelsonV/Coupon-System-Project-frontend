@@ -8,8 +8,6 @@ import {CompanyDetailsComponent} from './page/company-details/company-details.co
 import {CouponDetailsComponent} from './company/coupon-details/coupon-details.component';
 import {LoginComponent} from './components/authentication/login/login.component';
 import {RegistrationComponent} from './components/authentication/registration/registration.component';
-import {AddCompanyComponent} from './admin/add-company/add-company.component';
-import {AddCustomerComponent} from './admin/add-customer/add-customer.component';
 import {AdminUpdateCouponComponent} from './admin/update-coupon/admin-update-coupon.component';
 import {AdminUpdateCustomerComponent} from './admin/update-customer/admin-update-customer.component';
 import {CustomerAccountComponent} from './customer/customer-account/customer-account.component';
@@ -23,8 +21,8 @@ import {CouponsDescriptionComponent} from './search/coupons-desc/coupons-descrip
 import {CouponsPriceComponent} from './search/coupons-price/coupons-price.component';
 import {CompanyCouponsComponent} from './company/comp-coup/company-coupons.component';
 import {AdminAccountComponent} from './admin/account/admin-account.component';
-import {AdminGetAllCompaniesAndDeleteComponent} from './admin/getAllComapaniesAndDelete/admin-get-all-companies-and-delete.component';
-import {GetAllCouponsAndDeleteComponent} from './admin/getAllCouponsAndDelete/get-all-coupons-and-delete.component';
+import {CompanySettingComponent} from './admin/company-setting/company-setting.component';
+import {CouponSettingComponent} from './admin/coupon-setting/coupon-setting.component';
 import {CusUpdateCustomerComponent} from './customer/update-customer/cus-update-customer.component';
 import {AdminUpdateCompanyComponent} from './admin/update-company/admin-update-company.component';
 import {PlaceOfSalesComponent} from './customer/place-of-sales/place-of-sales.component';
@@ -47,13 +45,10 @@ const routes: Routes = [
   {path: 'admin-account', component: AdminAccountComponent},
   {path: 'admin-update-company', component: AdminUpdateCompanyComponent},
   {path: 'admin-update-coupon', component: AdminUpdateCouponComponent},
-  {path: 'admin-coupon-setting', component: GetAllCouponsAndDeleteComponent},
   {path: 'admin-update-customer', component: AdminUpdateCustomerComponent},
-  {path: 'add-customer', component: AddCustomerComponent},
-  {path: 'add-company', component: AddCompanyComponent},
-  {path: 'getAllComapaniesAndDelete', component: AdminGetAllCompaniesAndDeleteComponent},
+  {path: 'coupon-setting', component: CouponSettingComponent},
+  {path: 'company-setting', component: CompanySettingComponent},
   {path: 'customer-setting', component: CustomerSettingComponent},
-
 
   /*Customer*/
   {path: 'customer-account', component: CustomerAccountComponent},

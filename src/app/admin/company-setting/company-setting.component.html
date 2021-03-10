@@ -3,23 +3,17 @@
 <div class="companies">
     <table *ngIf="companies">
         <tr>
-            <th>id</th>
             <th>URL</th>
             <th>name</th>
         </tr>
         <tr class="row" *ngFor="let p of companies">
-            <td>{{p.id}}</td>
             <td><img class="img" src="{{p.imageURL}}" width=40px; height=50px;></td>
             <td><a class="name" style="cursor: pointer;" routerLink="/company-details/{{p.id}}">{{p.name}}</a></td>
             <td>
-                <button title="Delete Company" class="del" (click)=deleteCompany(p.id)>
-          <i class="fa fa-times" style="font-size:40px;
-                color:rgb(72, 103, 114);"></i></button>
+                <button title="Delete Company" class="button" (click)=deleteCompany(p.id)>Delete</button>
             </td>
             <td>
-                <a title="Update Company" routerLink="/update-company">
-                    <i class="fa fa-pencil" style="font-size:40px;
-                color:rgb(72, 103, 114);"></i></a>
+                <a title="Update Company" class="button" style="text-transform: lowercase;" routerLink="/update-company">update</a>
             </td>
         </tr>
     </table>

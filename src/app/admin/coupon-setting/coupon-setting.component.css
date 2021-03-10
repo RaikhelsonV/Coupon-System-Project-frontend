@@ -1,5 +1,5 @@
-.companies {
-    height: 80%;
+.coupons {
+    height: 90%;
     overflow: auto;
 }
 
@@ -13,22 +13,27 @@
 }
 
 table {
-    width: 500px;
+    width: 1000px;
     margin: 40px auto;
     padding: 10px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     text-align: center;
     border-collapse: collapse;
     background-color: rgb(70, 88, 94, 0.5);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
 }
 
 .row:hover {
+    background-color: rgb(29, 75, 90, 0.3);
+    color: white;
     border-bottom: 1px solid rgb(21, 64, 73);
     border-top: 1px solid rgb(21, 64, 73);
     transition: .5s;
-    background-color: rgb(54, 115, 136, 0.2);
-    color: white;
+}
+
+td {
+    font-size: 16px;
+    color: #454547;
 }
 
 th {
@@ -37,14 +42,10 @@ th {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-td {
-    font-size: 15px;
-    padding: 0px 15px;
-    color: rgb(129, 162, 172);
-}
-
 a {
-    color: lightblue;
+    color: rgb(117, 164, 182);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
     text-decoration: none;
 }
 
@@ -52,7 +53,7 @@ a {
     background-color: rgb(222, 241, 245);
     border: none;
     color: rgb(21, 64, 73);
-    padding: 5px 5px;
+    padding: 5px 12px;
     text-align: center;
     font-size: 10px;
     margin: 4px 2px;
@@ -72,6 +73,13 @@ h1 {
     padding: 5px;
     color: rgb(72, 103, 114);
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+a {
+    color: #454547;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .con {

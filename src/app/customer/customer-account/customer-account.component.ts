@@ -14,9 +14,10 @@ import {CouponService} from 'src/app/services/coupon.service';
 export class CustomerAccountComponent implements OnInit {
   public customer: Customer;
   public token: string = localStorage.getItem('token');
-  public totalPricePur: any = localStorage.getItem('totalPrice');
+  public totalPricePur: number;
+  public purchasedAmount:number;
   public coupon = new Coupon;
-
+ 
   public coupons: Coupon[];
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -35,12 +36,18 @@ export class CustomerAccountComponent implements OnInit {
       alert('Error:' + err.message);
     });
 
-    this.customerService.getAllCustomerCoupons(this.token).subscribe(coupons => {
+    this.customerService.getAllCustomerCouponsShoppingCart(this.token).subscribe(coupons => {
       this.coupons = coupons;
       console.dir(this.coupons);
     }, err => {
       alert('Error:' + err.message);
     });
+
+    this.customerService.getAllCustomerCouponsTotalPrice(this.token).subscribe(totalPrice => {
+      this.totalPricePur = totalPrice;
+      console.dir(totalPrice);
+    });
+
   }
 
   public delCoupon(couponId: number) {
@@ -48,19 +55,10 @@ export class CustomerAccountComponent implements OnInit {
     this.customerService.releaseCusCoupon(this.token, couponId)
       .subscribe(msg => {
         alert('Coupon has been succesfully released!');
-        this.totalPrice();
-        window.location.reload();
+            window.location.reload();
       }, err => {
         alert('Dear getAllCustomers, log into your account! ' + err);
       });
-  }
-
-  public totalPrice() {
-    this.customerService.getAllCustomerCouponsTotalPrice(this.token).subscribe(totalPrice => {
-      this.totalPricePur = totalPrice;
-      localStorage.setItem('totalPrice', totalPrice);
-      console.dir(totalPrice);
-    });
   }
 
 

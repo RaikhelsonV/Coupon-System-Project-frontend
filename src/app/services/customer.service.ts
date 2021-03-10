@@ -24,6 +24,9 @@ export class CustomerService {
   public getAllCustomerCoupons(token: string): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>(this.url + 'customer-coupons/' + token);
   }
+  public getAllCustomerCouponsShoppingCart(token: string): Observable<Coupon[]> {
+    return this.httpClient.get<Coupon[]>(this.url + 'customer-coupons-shopping-cart/' + token);
+  }
 
   public getAllCustomerCouponsTotalPrice(token: string): Observable<any> {
     return this.httpClient.get<Coupon[]>(this.url + 'customer-coupons-price/' + token);
@@ -53,9 +56,6 @@ export class CustomerService {
     return this.httpClient.post<any>(this.url + 'customer/' + token + '/purchase-coupon/' + couponId, {withCredentials: true});
   }
 
-  public changeAmount(token: string, couponId: number, amount: number): Observable<Coupon> {
-    return this.httpClient.put<Coupon>(this.url + token + '/change-amount/' + couponId + '/' + amount, {withCredentials: true});
-  }
 
 }
 

@@ -1,0 +1,34 @@
+<img *ngIf="!coupons" src="/assets/load/5.gif" style="margin-top: 2%;">
+
+<div class="coupons">
+    <table *ngIf="coupons">
+        <tr>
+            <th>url</th>
+            <th>title</th>
+            <th>desc.</th>
+            <th>price(₪)</th>
+            <th>amount(pc.)</th>
+            <th>cat.</th>
+            <th>start date</th>
+            <th>end date</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+        <tr class="row" *ngFor="let c of coupons">
+            <td><img class="img" src="{{c.imageURL}}" width=60px; height=80px;></td>
+            <td><a class="title" style="cursor: pointer;" routerLink="/coupon-details/{{c.id}}">{{c.title}}</a></td>
+            <td><a class="desc" style="cursor: pointer;" routerLink="/coupon-details/{{c.id}}">{{c.description}}</a></td>
+            <td>{{c.price}}</td>
+            <td>{{c.amount}}</td>
+            <td><a class="category" style="cursor: pointer;" routerLink="/coupon-category/{{c.category}}">{{c.category}}</a></td>
+            <td>{{c.startDate}}</td>
+            <td>{{c.endDate}}</td>
+            <td>
+                <button title="Delete Coupon" class="button" (click)=deleteCoupon(c.id)>delete</button>
+            </td>
+            <td>
+                <a title="Update Coupon" class="button" style="text-transform: lowercase;" routerLink="/update-coupon">update</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ModeService} from 'src/app/services/mode.service';
 
 @Component({
   selector: 'app-admin-account',
@@ -7,10 +8,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdminAccountComponent implements OnInit {
 
-  constructor() {
+  constructor(public modeService: ModeService) {
   }
 
   ngOnInit(): void {
+    this.modeService.clientType = this.modeService.ROLE_ADMIN;
   }
 
 }

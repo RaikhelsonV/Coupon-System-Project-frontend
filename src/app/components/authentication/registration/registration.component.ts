@@ -23,10 +23,12 @@ export class RegistrationComponent {
     this.userService.registration(this.email, this.password, 1)
       .subscribe(token => {
         localStorage.setItem('token', token.token),
+        localStorage.setItem('email', this.email),
+        localStorage.setItem('password', this.password),
 
           this.router.navigate(['/customer-account']);
         this.modeService.clientType = this.modeService.ROLE_CUSTOMER;
-        console.log('New getAllCustomers: ' + this.email);
+        console.log('New customer: ' + this.email);
       });
     err => alert(err);
   }
@@ -35,10 +37,11 @@ export class RegistrationComponent {
     this.userService.registration(this.email, this.password, 2)
       .subscribe(token => {
         localStorage.setItem('token', token.token),
-
+        localStorage.setItem('email', this.email),
+        localStorage.setItem('password', this.password),
           this.router.navigate(['/home']);
         this.modeService.clientType = this.modeService.ROLE_COMPANY;
-        console.log('New company' + this.email);
+        console.log('New company: ' + this.email);
       });
     err => alert(err);
   }

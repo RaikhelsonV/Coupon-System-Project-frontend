@@ -5,6 +5,7 @@ export class Customer {
     public id?: number,
     public firstName?: string,
     public lastName?: string,
+    public amountPurchasedCoupons?: number,
     public coupons?: Coupon[]) {
   }
 }

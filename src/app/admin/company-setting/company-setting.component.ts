@@ -2,21 +2,24 @@ import {Component, OnInit} from '@angular/core';
 import {Company} from 'src/app/models/company';
 import {Title} from '@angular/platform-browser';
 import {AdminService} from 'src/app/services/admin.service';
+import {ModeService} from '../../services/mode.service';
 
 @Component({
-  selector: 'app-admin-get-all-companies-and-delete',
-  templateUrl: './admin-get-all-companies-and-delete.component.html',
-  styleUrls: ['./admin-get-all-companies-and-delete.component.css']
+  selector: 'app-company-setting',
+  templateUrl: './company-setting.component.html',
+  styleUrls: ['./company-setting.component.css']
 })
-export class AdminGetAllCompaniesAndDeleteComponent implements OnInit {
+export class CompanySettingComponent implements OnInit {
   public companies: Company[];
   public token: string = localStorage.getItem('token');
 
-  constructor(private title: Title,
-              private adminService: AdminService) {
+  constructor(public title: Title,
+              public adminService: AdminService,
+              public modeService: ModeService) {
   }
 
   ngOnInit(): void {
+    this.modeService.clientType = this.modeService.ROLE_ADMIN;
     this.title.setTitle('Company');
 
     setTimeout(() => {
@@ -33,12 +36,13 @@ export class AdminGetAllCompaniesAndDeleteComponent implements OnInit {
   }
 
   public deleteCompany(companyId: number) {
-    this.adminService.deleteAdminCompany(this.token, companyId).subscribe(msg => {
+    this.adminService.deleteAdminUserCompany(this.token, companyId).subscribe(msg => {
       alert('Company has been successfully deleted!');
       window.location.reload();
       console.log('message:', msg);
     }, err => {
-      console.log('error:' + err);
+      window.location.reload();
+      console.log('Company has been successfully deleted!');
     });
   }
 

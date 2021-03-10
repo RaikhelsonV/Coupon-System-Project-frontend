@@ -1,51 +1,39 @@
 div {
-  margin: 40px auto;
+    margin: 10% auto;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 ul {
-  margin: auto;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .side {
-  width: 400px;
+    width: 300px;
 }
 
 .menu a {
-  background: lightblue;
-  color: #454547;
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  padding: 10px;
-  display: block;
-  border-bottom: 2px solid #666;
-  transition: 0.5s all;
-  /*сбоку*/
-  border-left: 5px solid rgb(72, 103, 114);;
+    background: rgba(73, 157, 173, 0.2);
+    color: #454547;
+    font-size: 18px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 10px;
+    display: block;
+    transition: 0.5s all;
 }
 
 .menu a:hover {
-  background: rgb(95, 125, 134);
-  padding: 10px 0 10px 20px;
-
+    background: rgb(95, 125, 134);
+    padding: 10px 0 10px 20px;
 }
 
-/*
-.list::after{
-   content: '';
-   position: absolute;
-   border: 10px solid;
-   border-color: transparent transparent transparent #eee;
-
-
-} */
-
-
-
+.list::after {
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent transparent #eee;
+}

@@ -21,11 +21,8 @@ import {LoginComponent} from './components/authentication/login/login.component'
 import {RegistrationComponent} from './components/authentication/registration/registration.component';
 
 import {YoniComponent} from './yoni/yoni.component';
-import {AddCompanyComponent} from './admin/add-company/add-company.component';
-import {AddCustomerComponent} from './admin/add-customer/add-customer.component';
 import {AdminUpdateCouponComponent} from './admin/update-coupon/admin-update-coupon.component';
 import {AdminUpdateCustomerComponent} from './admin/update-customer/admin-update-customer.component';
-
 import {CustomerAccountComponent} from './customer/customer-account/customer-account.component';
 import {SearchCouponComponent} from './search/search-coupon/search-coupon.component';
 import {CouponCategoryComponent} from './company/coupon-category/coupon-category.component';
@@ -36,8 +33,8 @@ import {CouponsTitleComponent} from './search/coupons-title/coupons-title.compon
 import {CouponsDescriptionComponent} from './search/coupons-desc/coupons-description.component';
 import {CouponsPriceComponent} from './search/coupons-price/coupons-price.component';
 import {CompanyCouponsComponent} from './company/comp-coup/company-coupons.component';
-import {AdminGetAllCompaniesAndDeleteComponent} from './admin/getAllComapaniesAndDelete/admin-get-all-companies-and-delete.component';
-import {GetAllCouponsAndDeleteComponent} from './admin/getAllCouponsAndDelete/get-all-coupons-and-delete.component';
+import {CompanySettingComponent} from './admin/company-setting/company-setting.component';
+import {CouponSettingComponent} from './admin/coupon-setting/coupon-setting.component';
 import {AdminAccountComponent} from './admin/account/admin-account.component';
 import {CusUpdateCustomerComponent} from './customer/update-customer/cus-update-customer.component';
 import {RootComponent} from './components/authentication/root/root.component';
@@ -51,11 +48,11 @@ import { CustomerSettingComponent } from './admin/customer-setting/customer-sett
 
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, MainComponent, HomeComponent,
     CouponComponent, Page404Component, CompanyComponent, ThumbnailComponent, CompanyDetailsComponent,
-    CouponDetailsComponent, MenuComponent, AddCompanyComponent, AddCustomerComponent, LoginComponent, UpdateCompanyComponent,
+    CouponDetailsComponent, MenuComponent, LoginComponent, UpdateCompanyComponent,
     RegistrationComponent, AdminUpdateCouponComponent, AdminUpdateCustomerComponent, YoniComponent, CustomerAccountComponent, SearchCouponComponent,
     CouponCategoryComponent, UpdateCompanyComponent, ComUpdateCouponComponent, AddCouponComponent,
-    CouponsTitleComponent, CouponsDescriptionComponent, CouponsPriceComponent, CompanyCouponsComponent, AdminGetAllCompaniesAndDeleteComponent,
-    GetAllCouponsAndDeleteComponent, AdminAccountComponent, CusUpdateCustomerComponent,
+    CouponsTitleComponent, CouponsDescriptionComponent, CouponsPriceComponent, CompanyCouponsComponent, CompanySettingComponent,
+    CouponSettingComponent, AdminAccountComponent, CusUpdateCustomerComponent,
     RootComponent, MenuAdminComponent, MenuCompanyComponent, MenuCustomerComponent, CustomerSettingComponent],
   imports: [
     BrowserModule,

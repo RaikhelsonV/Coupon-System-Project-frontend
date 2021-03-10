@@ -1,6 +1,16 @@
-<form action="">
-    <input type="text" [(ngModel)]="company.name" placeholder="name" [formControl]="nameFormControl" name="name">
-    <input type="text" [(ngModel)]="company.imageURL" placeholder="imageURL" [formControl]="imageURLFormControl" name="imageURL">
+<h1>Account details</h1>
+<form #formInfo="ngForm" class="menu-box">
+    <label for="name">Name*</label>
+    <input class="form" #nameInfo="ngModel" required pattern="^[A-Z].*$" type="text" [placeholder]="company.name" [(ngModel)]="company.name" name="name">
     <br>
-    <button (click)="UpdateCompany() ">Update</button>
+    <label for="imageURL">image URL*</label>
+    <input class="form" #imageURLInfo="ngModel" type="text" [placeholder]="company.imageURL" [(ngModel)]="company.imageURL" name="imageURL">
+    <button class="up" (click)="UpdateCompany() ">Save</button>
+
+    <label for="newEmail">email</label>
+    <input class="form" type="text" [placeholder]="user.email" [formControl]="newEmailFormControl" name="newEmail">
+    <br>
+    <label for="newPassword">password</label>
+    <input class="form" type="text" [placeholder]="user.password" [formControl]="newPasswordFormControl" name="newPassword">
+    <button class="up" (click)="UpdateUser() ">Update</button>
 </form>

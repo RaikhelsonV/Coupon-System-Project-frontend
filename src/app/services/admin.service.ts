@@ -27,7 +27,7 @@ export class AdminService {
   }
 
   public getAllCompaniesAdmin(token: string): Observable<Company[]> {
-    return this.httpClient.get<Company[]>(this.url + 'admin/' + token + '/companies');
+    return this.httpClient.get<Company[]>(this.url +'admin/' + token + '/companies');
   }
 
   public getAllCouponsAdmin(token: string): Observable<Coupon[]> {
@@ -65,16 +65,5 @@ export class AdminService {
   public deleteAdminCoupon(token: string, couponId: number): Observable<any> {
     return this.httpClient.delete<any>(this.url + 'admin/' + token + '/delete-coupon/' + couponId, {withCredentials: true});
   }
-
-  /////////////////////////////////////////////////////////////////
-
-  public addCustomer(token: string, customer: Customer): Observable<Customer> {
-    return this.httpClient.post<Customer>(this.url + 'admin/' + token + '/addCustomer', customer, {withCredentials: true});
-  }
-
-  public addCompany(token: string, company: Company): Observable<Company> {
-    return this.httpClient.post<Company>(this.url + 'admin/' + token + '/addCompany', company, {withCredentials: true});
-  }
-
 
 }

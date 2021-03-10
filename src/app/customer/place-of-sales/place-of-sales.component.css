@@ -76,10 +76,18 @@ button {
     background-color: lightgreen;
 }
 
+.amount {
+    position: absolute;
+    top: 40%;
+    font-size: 20px;
+    color: rgb(21, 64, 73);
+    background-color: lightgreen;
+}
+
 .rel {
     margin-top: 20px;
     position: absolute;
-    top: 40%;
+    top: 45%;
     font-size: 10px;
     color: rgb(21, 64, 73);
     background-color: lightblue;

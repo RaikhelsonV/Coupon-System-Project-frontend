@@ -44,7 +44,8 @@ export class CustomerSettingComponent implements OnInit {
       window.location.reload();
       console.log('Customer and User has been successfully deleted!:', msg);
     }, err => {
-      console.log('error:' + err);
+      window.location.reload();
+      console.log('Customer and User has been successfully deleted!');
     });
 
   }
